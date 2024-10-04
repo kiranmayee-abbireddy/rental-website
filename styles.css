@@ -106,3 +106,18 @@ footer {
     background-color: #008080; /* Teal background on hover */
     color: white; /* White text on hover */
 }
+.language-option {
+    display: flex;
+    align-items: center;
+    margin-left: 20px; /* Space between button and language option */
+    color: white; /* White text color */
+}
+
+.language-icon {
+    margin-right: 5px; /* Space between icon and text */
+}
+
+.language-text {
+    color: white; /* Ensure language text is white */
+    text-decoration: none; /* Remove underline */
+}
