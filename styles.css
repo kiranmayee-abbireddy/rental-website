@@ -89,3 +89,20 @@ footer {
     background-color: white; /* White background on submenu hover */
     color: #008080; /* Keep the text color teal on submenu hover */
 }
+.auth-button {
+    margin-left: auto; /* Push the button to the right */
+}
+
+.btn {
+    background-color: #ffffff; /* White background for button */
+    color: #008080; /* Teal text color */
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.btn:hover {
+    background-color: #008080; /* Teal background on hover */
+    color: white; /* White text on hover */
+}
