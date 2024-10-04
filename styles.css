@@ -12,10 +12,109 @@ header {
     text-align: center;
 }
 
-footer {
-    text-align: center;
-    margin-top: 20px;
-    padding: 10px 0;
-    background: #008080; /* Teal color for footer */
-    color: white;
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #008080; /* Teal background for the navbar */
+    padding: 10px 20px;
+}
+
+.logo a {
+    color: white; /* White color for logo */
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-center {
+    flex-grow: 1; /* Allows this section to take up remaining space */
+    display: flex;
+    justify-content: center; /* Center the nav links */
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    position: relative; /* For submenu positioning */
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white; /* White color for links */
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: color 0.3s; /* Smooth transition */
+}
+
+.nav-links a:hover {
+    color: white; /* Keep text color white on hover */
+}
+
+.submenu {
+    display: none; /* Hide submenu by default */
+    position: absolute; /* Position submenu relative to parent */
+    background-color: #ffffff; /* White background for submenu */
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+    border-radius: 5px;
+}
+
+.nav-links li:hover .submenu {
+    display: block; /* Show submenu on hover */
+}
+
+.submenu li {
+    margin: 5px 0;
+}
+
+.submenu a {
+    padding: 5px 10px;
+    color: #008080; /* Teal color for submenu links */
+    display: block; /* Make links fill the full width */
+}
+
+.submenu a:hover {
+    background-color: white; /* White background on submenu hover */
+    color: #008080; /* Keep the text color teal on submenu hover */
+}
+
+.auth-button {
+    margin-left: auto; /* Push the button to the right */
+}
+
+.btn {
+    background-color: #ffffff; /* White background for button */
+    color: #008080; /* Teal text color */
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.btn:hover {
+    background-color: #008080; /* Teal background on hover */
+    color: white; /* White text on hover */
+}
+
+.language-option {
+    display: flex;
+    align-items: center;
+    margin-left: 20px; /* Space between button and language option */
+    color: white; /* White text color */
+}
+
+.language-icon {
+    margin-right: 5px; /* Space between icon and text */
+}
+
+.language-text {
+    color: white; /* Ensure language text is white */
+    text-decoration: none; /* Remove underline */
 }
