@@ -61,3 +61,31 @@ footer {
 .nav-links a:hover {
     color: white; /* Keep text color white on hover */
 }
+.submenu {
+    display: none; /* Hide submenu by default */
+    position: absolute; /* Position submenu relative to parent */
+    background-color: #ffffff; /* White background for submenu */
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+    border-radius: 5px;
+}
+
+.nav-links li:hover .submenu {
+    display: block; /* Show submenu on hover */
+}
+
+.submenu li {
+    margin: 5px 0;
+}
+
+.submenu a {
+    padding: 5px 10px;
+    color: #008080; /* Teal color for submenu links */
+    display: block; /* Make links fill the full width */
+}
+
+.submenu a:hover {
+    background-color: white; /* White background on submenu hover */
+    color: #008080; /* Keep the text color teal on submenu hover */
+}
