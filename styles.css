@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white; /* Main background */
+}
+
+header {
+    background-color: #008080; /* Teal color for header */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    background: #008080; /* Teal color for footer */
+    color: white;
+}
