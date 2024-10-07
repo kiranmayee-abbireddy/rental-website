@@ -19,6 +19,7 @@ footer {
     background: #008080; /* Teal color for footer */
     color: white;
 }
+
 .navbar {
     display: flex;
     align-items: center;
@@ -33,6 +34,7 @@ footer {
     text-decoration: none;
     font-weight: bold;
 }
+
 .nav-center {
     flex-grow: 1; /* Allows this section to take up remaining space */
     display: flex;
@@ -55,12 +57,17 @@ footer {
     color: white; /* White color for links */
     text-decoration: none;
     padding: 5px 10px;
-    transition: color 0.3s; /* Smooth transition */
+    transition: background-color 0.3s, color 0.3s, border-radius 0.3s; /* Smooth transition */
+    border-radius: 20px; /* Rounded corners for capsule effect */
 }
 
-.nav-links a:hover {
-    color: white; /* Keep text color white on hover */
+.nav-links a:hover,
+.nav-links a:focus {
+    background-color: white; /* White background on hover */
+    color: #008080; /* Teal text color on hover */
+    border-radius: 20px; /* Capsule shape on hover */
 }
+
 .submenu {
     display: none; /* Hide submenu by default */
     position: absolute; /* Position submenu relative to parent */
@@ -83,12 +90,15 @@ footer {
     padding: 5px 10px;
     color: #008080; /* Teal color for submenu links */
     display: block; /* Make links fill the full width */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
 }
 
-.submenu a:hover {
-    background-color: white; /* White background on submenu hover */
-    color: #008080; /* Keep the text color teal on submenu hover */
+.submenu a:hover,
+.submenu a:focus {
+    background-color: #008080; /* Teal background on hover */
+    color: white; /* White text on hover */
 }
+
 .auth-button {
     margin-left: auto; /* Push the button to the right */
 }
@@ -106,6 +116,7 @@ footer {
     background-color: #008080; /* Teal background on hover */
     color: white; /* White text on hover */
 }
+
 .language-option {
     display: flex;
     align-items: center;
