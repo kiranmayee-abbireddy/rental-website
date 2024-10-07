@@ -19,6 +19,16 @@ body {
     display: flex; /* Use flexbox for alignment */
     justify-content: center; /* Center the button horizontally */
 }
+.features, .contact {
+    margin-bottom: 40px; /* Space below each section */
+    color: white;
+}
+
+h2 {
+    margin-bottom: 5px; /* Space below section headings */
+    color: white;
+    text-align: center;
+}
 
 /* Header styles */
 header {
@@ -30,12 +40,17 @@ header {
 
 /* Footer styles */
 footer {
-    text-align: center;
-    margin-top: 20px;
-    padding: 10px 0;
-    background: #008080;
-    color: white;
+    text-align: center;     /* Center-align text */
+    padding: 10px 0;       /* Vertical padding */
+    background: #008080;   /* Footer background color */
+    color: white;          /* Text color */
+    position: fixed;       /* Fixes the footer */
+    bottom: 0;             /* Sticks it to the bottom */
+    left: 0;               /* Aligns it to the left */
+    width: 100%;           /* Full width of the viewport */
+    z-index: 1000;         /* Ensure it stays above other content */
 }
+
 
 /* Navbar styles */
 .navbar {
