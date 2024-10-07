@@ -1,0 +1,226 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://images.pexels.com/photos/14992303/pexels-photo-14992303/free-photo-of-photo-of-a-car-speedometer-a-rev-counter-and-a-odometer.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect */
+}
+.welcome-message {
+    text-align: center; /* Center text */
+    margin-bottom: 10px; /* Space below the welcome message */
+    color: white;
+}
+
+.button-container {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center the button horizontally */
+}
+.features, .contact {
+    margin-bottom: 10px; /* Space below each section */
+    color: white;
+}
+h2 {
+    margin-bottom: 5px; /* Space below section headings */
+    color: white;
+    text-align: center;
+}
+
+/* Header styles */
+header {
+    background-color: #008080;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;     /* Center-align text */
+    padding: 0px 0;       /* Vertical padding */
+    background: #008080;   /* Footer background color */
+    color: white;          /* Text color */
+    position: fixed;       /* Fixes the footer */
+    bottom: 0;             /* Sticks it to the bottom */
+    left: 0;               /* Aligns it to the left */
+    width: 100%;           /* Full width of the viewport */
+    
+}
+
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #008080;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.logo a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-center {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    position: relative; /* For submenu positioning */
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white; /* White color for links */
+    text-decoration: none;
+    padding: 0px 10px;
+    border-radius: 20px; /* Rounded capsule effect */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+    background-color: white; /* Highlight on hover */
+    color: #008080; /* Teal text on hover */
+}
+
+.submenu {
+    display: none; /* Hide submenu by default */
+    position: absolute; /* Position submenu relative to parent */
+    background-color: #ffffff; /* White background for submenu */
+    list-style-type: none;
+    padding: 5px;
+    margin: 0;
+    border-radius: 5px;
+}
+
+.nav-links li:hover .submenu {
+    display: block; /* Show submenu on hover */
+}
+
+.submenu li {
+    margin: 5px 0;
+}
+
+.submenu a {
+    padding: 5px 10px;
+    color: #008080; /* Teal color for submenu links */
+    display: block; /* Make links fill the full width */
+}
+
+.submenu a:hover {
+    background-color: #008080; /* Teal background on submenu hover */
+    color: white; /* White text on submenu hover */
+}
+
+.auth-button {
+    margin-left: auto; /* Push the button to the right */
+    margin-right: 20px; /* Space between button and language option */
+}
+
+.btn {
+    background-color: #ffffff; /* White background for button */
+    color: #008080; /* Teal text color */
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.btn:hover {
+    background-color: #008080; /* Teal background on hover */
+    color: white; /* White text on hover */
+}
+
+.language-option {
+    display: flex;
+    align-items: center;
+    color: white; /* White text color */
+    margin-right: 40px; /* Ensure there’s space from the right edge */
+}
+
+.language-icon {
+    margin-right: 5px; /* Space between icon and text */
+}
+
+.language-text {
+    color: white; /* Ensure language text is white */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Rental Form styles */
+.rental-form {
+    padding: 20px;
+    background-color: rgba(0, 128, 128, 0.8); /* Semi-transparent background */
+    border-radius: 10px;
+    color: white;
+    max-width: 600px;
+    margin: 40px auto; /* Adjusted margin for better positioning */
+    margin-bottom: 60px;
+}
+
+.rental-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex; /* Enable flexbox for horizontal alignment */
+    justify-content: space-between; /* Distribute space between items */
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    margin-bottom:5px;
+    flex: 1; /* Allow label to take up equal space */
+}
+
+.form-group input,
+.form-group select, 
+.form-group textarea {
+    flex: 2; /* Allow input/select to take more space */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: white;
+    color: black;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: teal;
+    outline: none;
+}
+
+.btn.view-vehicles {
+    background-color: teal;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn.view-vehicles:hover {
+    background-color: #006666; /* Darker teal on hover */
+}
