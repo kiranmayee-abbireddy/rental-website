@@ -2,13 +2,16 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: white; /* Main background */
+    background-image: url('https://images.pexels.com/photos/14992303/pexels-photo-14992303/free-photo-of-photo-of-a-car-speedometer-a-rev-counter-and-a-odometer.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect */
 }
 
 header {
-    background-color: #008080; /* Teal color for header */
+    background-color: #008080;
     color: white;
-    padding: 20px 0;
+    padding: 40px 0;
     text-align: center;
 }
 
@@ -16,7 +19,7 @@ footer {
     text-align: center;
     margin-top: 20px;
     padding: 10px 0;
-    background: #008080; /* Teal color for footer */
+    background: #008080;
     color: white;
 }
 
@@ -24,21 +27,25 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #008080; /* Teal background for navbar */
+    background-color: #008080;
     padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
 }
 
 .logo a {
-    color: white; /* White color for logo */
+    color: white;
     font-size: 24px;
     text-decoration: none;
     font-weight: bold;
 }
 
 .nav-center {
-    flex-grow: 1; /* Allows this section to take up remaining space */
+    flex-grow: 1;
     display: flex;
-    justify-content: center; /* Center the nav links */
+    justify-content: center;
 }
 
 .nav-links {
@@ -57,15 +64,14 @@ footer {
     color: white; /* White color for links */
     text-decoration: none;
     padding: 5px 10px;
-    transition: background-color 0.3s, color 0.3s, border-radius 0.3s; /* Smooth transition */
-    border-radius: 20px; /* Rounded corners for capsule effect */
+    border-radius: 20px; /* Rounded capsule effect */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
 }
 
 .nav-links a:hover,
 .nav-links a:focus {
-    background-color: white; /* White background on hover */
-    color: #008080; /* Teal text color on hover */
-    border-radius: 20px; /* Capsule shape on hover */
+    background-color: white; /* Highlight on hover */
+    color: #008080; /* Teal text on hover */
 }
 
 .submenu {
@@ -76,6 +82,7 @@ footer {
     padding: 10px;
     margin: 0;
     border-radius: 5px;
+    z-index: 1;
 }
 
 .nav-links li:hover .submenu {
@@ -90,17 +97,16 @@ footer {
     padding: 5px 10px;
     color: #008080; /* Teal color for submenu links */
     display: block; /* Make links fill the full width */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
 }
 
-.submenu a:hover,
-.submenu a:focus {
-    background-color: #008080; /* Teal background on hover */
-    color: white; /* White text on hover */
+.submenu a:hover {
+    background-color: #008080; /* Teal background on submenu hover */
+    color: white; /* White text on submenu hover */
 }
 
 .auth-button {
     margin-left: auto; /* Push the button to the right */
+    margin-right: 20px; /* Space between button and language option */
 }
 
 .btn {
@@ -120,8 +126,8 @@ footer {
 .language-option {
     display: flex;
     align-items: center;
-    margin-left: 20px; /* Space between button and language option */
     color: white; /* White text color */
+    margin-right: 40px; /* Ensure there’s space from the right edge */
 }
 
 .language-icon {
@@ -131,4 +137,11 @@ footer {
 .language-text {
     color: white; /* Ensure language text is white */
     text-decoration: none; /* Remove underline */
+}
+
+/* Additional content to test scrolling */
+body::after {
+    content: "";
+    display: block;
+    height: 2000px; /* For testing scroll */
 }
