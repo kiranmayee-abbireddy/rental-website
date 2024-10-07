@@ -63,25 +63,39 @@
             <h2>Car Rental Reservation</h2>
         <form>
             <div class="form-group">
-            <label for="pickup-location">Pick-up Location</label>
-            <input type="text" id="pickup-location" placeholder="Enter pick-up location" required>
+                <label for="pickup-location">Pick-up Location</label>
+                <input type="text" id="pickup-location" placeholder="Enter pick-up location" required>
             </div>
 
             <div class="form-group">
-            <label for="pickup-date">Pick-up Date</label>
-            <input type="date" id="pickup-date" required>
+                <label for="pickup-date">Pick-up Date</label>
+                <input type="date" id="pickup-date" required>
             </div>
 
             <div class="form-group">
-            <label for="pickup-time">Pick-up Time</label>
-            <select id="pickup-time">
-            <option value="11:00">11:00</option>
-            <option value="12:00">12:00</option>
-            <option value="13:00">13:00</option>
-            </select>
-             </div>
-        <button type="submit" class="btn view-vehicles">View Vehicles</button>
+                <label for="pickup-time">Pick-up Time</label>
+                <select id="pickup-time">
+                    <option value="11:00">11:00</option>
+                    <option value="12:00">12:00</option>
+                    <option value="13:00">13:00</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="dropoff-location">Same Drop-off Location</label>
+                <select id="dropoff-location">
+                    <option value="same">Same as Pick-up</option>
+                    <option value="different">Different Location</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="dropoff-date">Drop-off Date</label>
+                <input type="date" id="dropoff-date" required>
+            </div>
+            <button type="submit" class="btn view-vehicles">View Vehicles</button>
         </form>
+
         </section>
     </main>
 
