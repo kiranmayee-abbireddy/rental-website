@@ -1,3 +1,5 @@
+/* styles.css */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,7 +9,18 @@ body {
     background-position: center;
     background-attachment: fixed; /* Parallax effect */
 }
+.welcome-message {
+    text-align: center; /* Center text */
+    margin-bottom: 20px; /* Space below the welcome message */
+    color: white;
+}
 
+.button-container {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center the button horizontally */
+}
+
+/* Header styles */
 header {
     background-color: #008080;
     color: white;
@@ -15,6 +28,7 @@ header {
     text-align: center;
 }
 
+/* Footer styles */
 footer {
     text-align: center;
     margin-top: 20px;
@@ -23,6 +37,7 @@ footer {
     color: white;
 }
 
+/* Navbar styles */
 .navbar {
     display: flex;
     align-items: center;
@@ -123,6 +138,22 @@ footer {
     color: white; /* White text on hover */
 }
 
+.language-option {
+    display: flex;
+    align-items: center;
+    color: white; /* White text color */
+    margin-right: 40px; /* Ensure there’s space from the right edge */
+}
+
+.language-icon {
+    margin-right: 5px; /* Space between icon and text */
+}
+
+.language-text {
+    color: white; /* Ensure language text is white */
+    text-decoration: none; /* Remove underline */
+}
+
 /* Additional content to test scrolling */
 body::after {
     content: "";
@@ -130,18 +161,14 @@ body::after {
     height: 2000px; /* For testing scroll */
 }
 
-/* styles.css */
-body {
-    font-family: Arial, sans-serif;
-}
-
+/* Rental Form styles */
 .rental-form {
     padding: 20px;
-    background-color: rgba(0, 128, 128, 0.8);
+    background-color: rgba(0, 128, 128, 0.8); /* Semi-transparent background */
     border-radius: 10px;
     color: white;
     max-width: 600px;
-    margin: 20px auto;
+    margin: 100px auto; /* Adjusted margin for better positioning */
 }
 
 .rental-form h2 {
@@ -188,5 +215,5 @@ body {
 }
 
 .btn.view-vehicles:hover {
-    background-color: #006666;
+    background-color: #006666; /* Darker teal on hover */
 }
