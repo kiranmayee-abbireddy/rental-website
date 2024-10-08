@@ -6,14 +6,30 @@ body {
     background-image: url('https://images.pexels.com/photos/14992303/pexels-photo-14992303/free-photo-of-photo-of-a-car-speedometer-a-rev-counter-and-a-odometer.jpeg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Parallax effect */
+    background-attachment: fixed; 
+}
+@media screen and (max-width:992px){
+    body{
+        background-image: url('https://images.pexels.com/photos/17624314/pexels-photo-17624314/free-photo-of-vintage-mitsubishi-pajero.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    }
+}
+@media screen and (max-width : 600px){
+    body{
+        background-image: url('https://images.pexels.com/photos/18709254/pexels-photo-18709254/free-photo-of-woman-behind-stairs-wall.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')
+    }
 }
 .welcome-message {
     text-align: center; /* Center text */
     margin-bottom: 10px; /* Space below the welcome message */
     color: white;
 }
-
+@media screen and (max-width: 600px){
+    .welcome-message {
+        text-align: center; /* Center text */
+        margin-bottom: 10px; /* Space below the welcome message */
+        color: black;
+    }
+}
 .button-container {
     display: flex; /* Use flexbox for alignment */
     justify-content: center; /* Center the button horizontally */
@@ -27,8 +43,13 @@ h2 {
     color: white;
     text-align: center;
 }
-
-/* Header styles */
+@media screen and (max-width: 600px){
+    h2 {
+        margin-bottom: 5px; /* Space below section headings */
+        color: black;
+        text-align: center;
+    }
+}
 header {
     background-color: #008080;
     color: white;
@@ -36,7 +57,7 @@ header {
     text-align: center;
 }
 
-/* Footer styles */
+
 footer {
     text-align: center;     /* Center-align text */
     padding: 0px 0;       /* Vertical padding */
@@ -165,6 +186,7 @@ footer {
     color: white; /* Ensure language text is white */
     text-decoration: none; /* Remove underline */
 }
+
 
 /* Rental Form styles */
 .rental-form {
