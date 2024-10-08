@@ -375,8 +375,9 @@ footer {
     }
 
     header {
-        background-color: #10627a; /* Header background color */
-        color: white; /* Header text color */
+        background-color: rgba(68, 158, 210, 0.445); /* Header background color */
+        color: #e8f1f4; /* Header text color */
+        padding-bottom: 5px ;
     }
 
     footer {
@@ -399,7 +400,7 @@ footer {
     }
 
     .submenu {
-        background-color: #10627a; /* Submenu background color */
+        background-color: white; /* Submenu background color */
     }
 
     .submenu a {
@@ -407,8 +408,8 @@ footer {
     }
 
     .submenu a:hover {
-        background-color: white; /* Change submenu background on hover */
-        color: #10627a; /* Submenu text color on hover */
+        background-color: #10627a; /* Change submenu background on hover */
+        color: white; /* Submenu text color on hover */
     }
 
     .btn {
@@ -431,7 +432,7 @@ footer {
     .form-group textarea {
         border-color: #ccc; /* Input border color */
         background-color: white/* Transparent background */
-        color: white; /* Input text color */
+        color: black; /* Input text color */
     }
     .form-group input:focus,
     .form-group select:focus {
@@ -452,5 +453,19 @@ footer {
     .btn.view-vehicles:hover {
         background-color: #10627a; /* Darker teal on hover */
         color : white;
+    }
+    .menu a,
+    .submenu a {
+    color: #10627a; /* Link color */
+    text-decoration: none; /* Remove underline */
+    padding: 5px 10px;
+    display: block; /* Make links fill the full width */
+    }
+
+    .menu a:hover,
+    .submenu a:hover {
+    background-color: #10627a; /* Change background on hover */
+    color: white; /* Change text color on hover */
+    border-radius : 20px;
     }
 }
