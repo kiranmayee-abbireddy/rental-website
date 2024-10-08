@@ -16,7 +16,7 @@ body {
 
 @media screen and (max-width: 600px) {
     body {
-        background-image: url('https://images.pexels.com/photos/18709254/pexels-photo-18709254/free-photo-of-woman-behind-stairs-wall.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+        background-image: url('https://images.pexels.com/photos/19300320/pexels-photo-19300320/free-photo-of-red-audi-rs-6-car.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
     }
 }
 
@@ -368,7 +368,7 @@ footer {
 .btn.view-vehicles:hover {
     background-color: #006666; /* Darker teal on hover */
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
     /* Replace teal with #1a98db in all elements */
     body {
         background-color: #f0f0f0; /* Optional: Set a background color */
@@ -465,6 +465,107 @@ footer {
     .menu a:hover,
     .submenu a:hover {
     background-color: #1a98db; /* Change background on hover */
+    color: white; /* Change text color on hover */
+    border-radius : 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        background-color: #f0f0f0; /* Optional: Set a background color */
+    }
+
+    header {
+        background-color: rgba(90, 5, 5, 0.495); /* Header background color */
+        color: #e8f1f4; /* Header text color */
+        padding-bottom: 5px ;
+    }
+
+    footer {
+        background-color: #5a0505; /* Footer background color */
+        color: white; /* Footer text color */
+    }
+
+    .navbar {
+        background-color: #5a0505; /* Navbar background color */
+    }
+
+    .nav-links a {
+        color: white; /* Link color */
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus {
+        background-color: #5a0505; /* Highlight on hover */
+        color: white; /* Text color on hover */
+    }
+
+    .submenu {
+        background-color: white; /* Submenu background color */
+    }
+
+    .submenu a {
+        color: white; /* Submenu link color */
+    }
+
+    .submenu a:hover {
+        background-color: #5a0505; /* Change submenu background on hover */
+        color: white; /* Submenu text color on hover */
+    }
+
+    .btn {
+        background-color: white; /* Button background color */
+        color: #5a0505; /* Button text color */
+    }
+
+    .btn:hover {
+        background-color: #5a0505; /* Darker shade on button hover */
+    }
+
+    /* Rental Form styles */
+    .rental-form {
+        background-color: rgba(90, 5, 5, 0.8); /* Semi-transparent background */
+        color: white; /* Form text color */
+    }
+
+    .form-group input,
+    .form-group select, 
+    .form-group textarea {
+        border-color: #ccc; /* Input border color */
+        background-color: white/* Transparent background */
+        color: black; /* Input text color */
+    }
+    .form-group input:focus,
+    .form-group select:focus {
+        border-color: #5a0505; /* Border color on focus */
+        outline: none; /* Remove outline */
+    }
+    .btn.view-vehicles {
+        background-color:white;
+        color:#5a0505;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+    
+    .btn.view-vehicles:hover {
+        background-color: #5a0505; /* Darker teal on hover */
+        color : white;
+    }
+    .menu a,
+    .submenu a {
+    color: #5a0505; /* Link color */
+    text-decoration: none; /* Remove underline */
+    padding: 5px 10px;
+    display: block; /* Make links fill the full width */
+    }
+
+    .menu a:hover,
+    .submenu a:hover {
+    background-color: #5a0505; /* Change background on hover */
     color: white; /* Change text color on hover */
     border-radius : 20px;
     }
