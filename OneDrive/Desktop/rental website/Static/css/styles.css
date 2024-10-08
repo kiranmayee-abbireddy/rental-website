@@ -407,8 +407,8 @@ footer {
     }
 
     .submenu a:hover {
-        background-color: #10627a; /* Change submenu background on hover */
-        color: white; /* Submenu text color on hover */
+        background-color: white; /* Change submenu background on hover */
+        color: #10627a; /* Submenu text color on hover */
     }
 
     .btn {
@@ -422,7 +422,7 @@ footer {
 
     /* Rental Form styles */
     .rental-form {
-        background-color: #10627a; /* Semi-transparent background */
+        background-color: rgba(16, 98, 122, 0.8); /* Semi-transparent background */
         color: white; /* Form text color */
     }
 
@@ -430,13 +430,27 @@ footer {
     .form-group select, 
     .form-group textarea {
         border-color: #ccc; /* Input border color */
-        background-color: white; /* Input background color */
-        color: black; /* Input text color */
+        background-color: white/* Transparent background */
+        color: white; /* Input text color */
     }
-
     .form-group input:focus,
     .form-group select:focus {
         border-color: #10627a; /* Border color on focus */
         outline: none; /* Remove outline */
+    }
+    .btn.view-vehicles {
+        background-color:white;
+        color:#10627a;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+    
+    .btn.view-vehicles:hover {
+        background-color: #10627a; /* Darker teal on hover */
+        color : white;
     }
 }
