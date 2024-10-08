@@ -368,3 +368,75 @@ footer {
 .btn.view-vehicles:hover {
     background-color: #006666; /* Darker teal on hover */
 }
+@media screen and (max-width: 768px) {
+    /* Replace teal with #10627a in all elements */
+    body {
+        background-color: #f0f0f0; /* Optional: Set a background color */
+    }
+
+    header {
+        background-color: #10627a; /* Header background color */
+        color: white; /* Header text color */
+    }
+
+    footer {
+        background-color: #10627a; /* Footer background color */
+        color: white; /* Footer text color */
+    }
+
+    .navbar {
+        background-color: #10627a; /* Navbar background color */
+    }
+
+    .nav-links a {
+        color: white; /* Link color */
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus {
+        background-color: #10627a; /* Highlight on hover */
+        color: white; /* Text color on hover */
+    }
+
+    .submenu {
+        background-color: #10627a; /* Submenu background color */
+    }
+
+    .submenu a {
+        color: white; /* Submenu link color */
+    }
+
+    .submenu a:hover {
+        background-color: #10627a; /* Change submenu background on hover */
+        color: white; /* Submenu text color on hover */
+    }
+
+    .btn {
+        background-color: white; /* Button background color */
+        color: #10627a; /* Button text color */
+    }
+
+    .btn:hover {
+        background-color: #10627a; /* Darker shade on button hover */
+    }
+
+    /* Rental Form styles */
+    .rental-form {
+        background-color: #10627a; /* Semi-transparent background */
+        color: white; /* Form text color */
+    }
+
+    .form-group input,
+    .form-group select, 
+    .form-group textarea {
+        border-color: #ccc; /* Input border color */
+        background-color: white; /* Input background color */
+        color: black; /* Input text color */
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+        border-color: #10627a; /* Border color on focus */
+        outline: none; /* Remove outline */
+    }
+}
