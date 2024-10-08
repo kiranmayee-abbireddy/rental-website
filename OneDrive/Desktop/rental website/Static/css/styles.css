@@ -10,7 +10,7 @@ body {
 
 @media screen and (max-width: 992px) {
     body {
-        background-image: url('https://images.pexels.com/photos/17624314/pexels-photo-17624314/free-photo-of-vintage-mitsubishi-pajero.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+        background-image: url('https://images.pexels.com/photos/3221163/pexels-photo-3221163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
     }
 }
 
@@ -369,24 +369,24 @@ footer {
     background-color: #006666; /* Darker teal on hover */
 }
 @media screen and (max-width: 768px) {
-    /* Replace teal with #10627a in all elements */
+    /* Replace teal with #1a98db in all elements */
     body {
         background-color: #f0f0f0; /* Optional: Set a background color */
     }
 
     header {
-        background-color: rgba(68, 158, 210, 0.445); /* Header background color */
+        background-color: rgba(48, 162, 228, 0.495); /* Header background color */
         color: #e8f1f4; /* Header text color */
         padding-bottom: 5px ;
     }
 
     footer {
-        background-color: #10627a; /* Footer background color */
+        background-color: #1a98db; /* Footer background color */
         color: white; /* Footer text color */
     }
 
     .navbar {
-        background-color: #10627a; /* Navbar background color */
+        background-color: #1a98db; /* Navbar background color */
     }
 
     .nav-links a {
@@ -395,7 +395,7 @@ footer {
 
     .nav-links a:hover,
     .nav-links a:focus {
-        background-color: #10627a; /* Highlight on hover */
+        background-color: #1a98db; /* Highlight on hover */
         color: white; /* Text color on hover */
     }
 
@@ -408,17 +408,17 @@ footer {
     }
 
     .submenu a:hover {
-        background-color: #10627a; /* Change submenu background on hover */
+        background-color: #1a98db; /* Change submenu background on hover */
         color: white; /* Submenu text color on hover */
     }
 
     .btn {
         background-color: white; /* Button background color */
-        color: #10627a; /* Button text color */
+        color: #1a98db; /* Button text color */
     }
 
     .btn:hover {
-        background-color: #10627a; /* Darker shade on button hover */
+        background-color: #1a98db; /* Darker shade on button hover */
     }
 
     /* Rental Form styles */
@@ -436,12 +436,12 @@ footer {
     }
     .form-group input:focus,
     .form-group select:focus {
-        border-color: #10627a; /* Border color on focus */
+        border-color: #1a98db; /* Border color on focus */
         outline: none; /* Remove outline */
     }
     .btn.view-vehicles {
         background-color:white;
-        color:#10627a;
+        color:#1a98db;
         border: none;
         padding: 10px 15px;
         border-radius: 5px;
@@ -451,12 +451,12 @@ footer {
     }
     
     .btn.view-vehicles:hover {
-        background-color: #10627a; /* Darker teal on hover */
+        background-color: #1a98db; /* Darker teal on hover */
         color : white;
     }
     .menu a,
     .submenu a {
-    color: #10627a; /* Link color */
+    color: #1a98db; /* Link color */
     text-decoration: none; /* Remove underline */
     padding: 5px 10px;
     display: block; /* Make links fill the full width */
@@ -464,7 +464,7 @@ footer {
 
     .menu a:hover,
     .submenu a:hover {
-    background-color: #10627a; /* Change background on hover */
+    background-color: #1a98db; /* Change background on hover */
     color: white; /* Change text color on hover */
     border-radius : 20px;
     }
