@@ -570,3 +570,78 @@ footer {
     border-radius : 20px;
     }
 }
+@media screen and (min-width: 2560px) {
+    body {
+        font-size: 1.5em; /* Adjust base font size as needed */
+    }
+
+    .welcome-message,
+    .features,
+    .contact,
+    h2,
+    label,
+    .nav-links a,
+    .btn,
+    .btn.view-vehicles {
+        font-size: 1.5em; /* Increase size for specific elements */
+    }
+
+    h1{
+        font-size: 3em;
+    }
+    /* Adjust other elements as needed */
+    .rental-form h2 {
+        font-size: 1.2em; /* Larger heading size */
+    }
+
+    /* Example for form elements */
+    .form-group input,
+    .form-group select, 
+    .form-group textarea {
+        font-size: 1.5em; /* Larger input text size */
+    }
+    header {
+        background-color: #0080804a; /* Updated background color */
+        color: white;
+        padding: 100px ; /* Increased padding for more height */
+        text-align: center;
+    }
+    
+    footer {
+        text-align: center; /* Center-align text */
+        padding: 20px 0; /* Increased vertical padding */
+        background: #008080; /* Footer background color */
+        color: white; /* Text color */
+        position: fixed; /* Fixes the footer */
+        bottom: 0; /* Sticks it to the bottom */
+        left: 0; /* Aligns it to the left */
+        width: 100%; /* Full width of the viewport */
+    }
+    
+    .rental-form {
+        padding: 40px; /* Increased padding for more area */
+        background-color: rgba(0, 128, 128, 0.8); /* Semi-transparent background */
+        border-radius: 30px;
+        color: white;
+        max-width: 1500px;
+        margin: 100px auto; /* Adjusted margin for better positioning */
+        margin-bottom: 200px; /* Increased bottom margin */
+    }
+    
+    .rental-form h2 {
+        text-align: center;
+        margin-bottom: 50px; /* Increased margin for spacing */
+    }
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #008080;
+        padding: 30px 20px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+    }
+    
+}
