@@ -640,4 +640,11 @@ footer {
         width: 100%;
         z-index: 100;
     } 
+    .car-gallery {
+        grid-template-columns: repeat(4, 1fr); /* 4 images per row */
+    }
+    .car-gallery img {
+        height: 500px; /* Set a larger height for bigger images */
+    }
 }
+
