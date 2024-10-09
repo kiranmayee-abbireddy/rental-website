@@ -312,26 +312,26 @@ footer {
 }
 
 .discounts h2 {
-    position: sticky; /* Fix the heading at the top */
-    top: 0; /* Stick to the top of the section */
+    position: sticky; 
+    top: 0; 
     z-index: 1; /* Ensure it appears above the discount items */
-    padding: 10px 0; /* Some padding for aesthetics */
+    padding: 10px 0;
 }
 
 .discount-container {
-    display: flex; /* Use flexbox to arrange items */
+    display: flex; 
     flex-wrap: wrap; /* Allow items to wrap to the next line */
     justify-content: center; /* Center items */
-    gap: 20px; /* Space between items */
-    padding: 10px; /* Add some padding around the items */
+    gap: 20px;
+    padding: 10px; 
 }
 
 .discount-item {
     background-color: #008080;
     border-radius: 10px;
     padding: 30px;
-    flex: 1 1 80px; /* Flexible width, minimum of 200px */
-    max-width: 200px; /* Optional: set a max width for each item */
+    flex: 1 1 80px; 
+    max-width: 200px; 
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s;
 }
@@ -339,7 +339,11 @@ footer {
 .discount-item:hover {
     transform: scale(1.05);
 }
-
+.error-message {
+    color: red; /* Red text for error message */
+    font-size: 0.9em; /* Slightly smaller font */
+    text-align: center;
+}
 
 
 @media screen and (max-width: 320px) {
