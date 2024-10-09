@@ -500,6 +500,7 @@ footer {
     .rental-form {
         background-color: rgba(90, 5, 5, 0.8); /* Semi-transparent background */
         color: white; /* Form text color */
+        margin : 5px ;
     }
 
     .form-group input,
