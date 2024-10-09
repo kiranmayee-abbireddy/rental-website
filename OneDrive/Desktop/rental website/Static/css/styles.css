@@ -460,7 +460,9 @@ footer {
     border-radius : 20px;
 
     }
-    
+    .car-gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+    }
 }
 @media screen and (max-width: 600px) {
     body {
