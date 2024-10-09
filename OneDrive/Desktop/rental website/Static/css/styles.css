@@ -475,6 +475,12 @@ footer {
     .car-gallery {
         grid-template-columns: repeat(2, 1fr); /* 2 images per row */
     }
+    .discount-item {
+        background-color: #1a98db;
+    }
+    .discounts {
+        background-color: rgba(47, 112, 112, 0.582);
+    }
 }
 
 @media screen and (max-width: 600px) {
