@@ -21,23 +21,23 @@ body {
 }
 
 .welcome-message {
-    text-align: center; /* Center text */
-    margin-bottom: 10px; /* Space below the welcome message */
+    text-align: center;
+    margin-bottom: 10px;
     color: white;
 }
 
 .button-container {
-    display: flex; /* Use flexbox for alignment */
-    justify-content: center; /* Center the button horizontally */
+    display: flex;
+    justify-content: center;
 }
 
 .features, .contact {
-    margin-bottom: 10px; /* Space below each section */
+    margin-bottom: 10px;
     color: white;
 }
 
 h2 {
-    margin-bottom: 5px; /* Space below section headings */
+    margin-bottom: 5px;
     color: white;
     text-align: center;
 }
@@ -50,17 +50,16 @@ header {
 }
 
 footer {
-    text-align: center; /* Center-align text */
-    padding: 0px 0; /* Vertical padding */
-    background: #008080; /* Footer background color */
-    color: white; /* Text color */
-    position: fixed; /* Fixes the footer */
-    bottom: 0; /* Sticks it to the bottom */
-    left: 0; /* Aligns it to the left */
-    width: 100%; /* Full width of the viewport */
+    text-align: center;
+    padding: 0; /* Vertical padding */
+    background: #008080;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
 
-/* Navbar styles */
 .navbar {
     display: flex;
     align-items: center;
@@ -94,28 +93,28 @@ footer {
 }
 
 .nav-links li {
-    position: relative; /* For submenu positioning */
+    position: relative;
     margin: 0 15px;
 }
 
 .nav-links a {
-    color: white; /* White color for links */
+    color: white;
     text-decoration: none;
-    padding: 0px 10px;
-    border-radius: 20px; /* Rounded capsule effect */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+    padding: 0 10px;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .nav-links a:hover,
 .nav-links a:focus {
-    background-color: white; /* Highlight on hover */
-    color: #008080; /* Teal text on hover */
+    background-color: white;
+    color: #008080;
 }
 
 .submenu {
-    display: none; /* Hide submenu by default */
-    position: absolute; /* Position submenu relative to parent */
-    background-color: #ffffff; /* White background for submenu */
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
     list-style-type: none;
     padding: 5px;
     margin: 0;
@@ -123,7 +122,7 @@ footer {
 }
 
 .nav-links li:hover .submenu {
-    display: block; /* Show submenu on hover */
+    display: block;
 }
 
 .submenu li {
@@ -132,32 +131,32 @@ footer {
 
 .submenu a {
     padding: 5px 10px;
-    color: #008080; /* Teal color for submenu links */
-    display: block; /* Make links fill the full width */
+    color: #008080;
+    display: block;
 }
 
 .submenu a:hover {
-    background-color: #008080; /* Teal background on submenu hover */
-    color: white; /* White text on submenu hover */
+    background-color: #008080;
+    color: white;
 }
 
 .auth-button {
-    margin-left: auto; /* Push the button to the right */
-    margin-right: 20px; /* Space between button and language option */
+    margin-left: auto;
+    margin-right: 20px;
 }
 
 .btn {
-    background-color: #ffffff; /* White background for button */
-    color: #008080; /* Teal text color */
+    background-color: #ffffff;
+    color: #008080;
     text-decoration: none;
     padding: 10px 15px;
     border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .btn:hover {
-    background-color: #008080; /* Teal background on hover */
-    color: white; /* White text on hover */
+    background-color: #008080;
+    color: white;
 }
 
 .menu {
@@ -167,120 +166,107 @@ footer {
 .menu-option {
     position: relative;
     margin-right: 20px;
-    display: none; /* Hidden by default */
+    display: none;
 }
 
 .menu-option span {
     cursor: pointer;
-    font-size: 24px; /* Adjust size as needed */
-    color: white; /* Color for the menu icon */
-}
-/* Navbar styles */
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #008080;
-    padding: 10px 20px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 100;
+    font-size: 24px;
+    color: white;
 }
 
 .menu-option {
-    position: relative; /* Important for submenu positioning */
+    position: relative;
 }
 
 .menu {
-    display: none; /* Hide the menu by default */
+    display: none;
     position: absolute;
-    background-color: #ffffff; /* Background for the menu */
+    background-color: #ffffff;
     padding: 10px;
     list-style: none;
-    z-index: 200; /* Ensure it appears above other content */
+    z-index: 200;
 }
 
 .menu-option:hover .menu {
-    display: block; /* Show menu on hover */
+    display: block;
 }
 
-/* Submenu styles */
 .submenu {
-    display: none; /* Initially hidden */
-    position: absolute; 
-    background-color: #ffffff; 
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
     padding: 5px;
     list-style: none;
     margin: 0;
-    z-index: 200; /* Ensure it appears above other content */
+    z-index: 200;
 }
 
 .menu-option li:hover .submenu {
-    display: block; /* Show submenu on hover */
+    display: block;
 }
 
-/* Ensure links and items are styled */
 .menu a,
 .submenu a {
-    color: #008080; /* Link color */
-    text-decoration: none; /* Remove underline */
+    color: #008080;
+    text-decoration: none;
     padding: 5px 10px;
-    display: block; /* Make links fill the full width */
+    display: block;
 }
 
 .menu a:hover,
 .submenu a:hover {
-    background-color: #008080; /* Change background on hover */
-    color: white; /* Change text color on hover */
+    background-color: #008080;
+    color: white;
 }
 
-/* Show the menu option in smaller screens */
 @media screen and (max-width: 897px) {
     .menu-option {
-        display: block; /* Show menu icon */
+        display: block;
     }
 
     .nav-links {
-        display: none; /* Hide the regular nav links */
+        display: none;
         flex-direction: column;
         position: absolute;
-        top: 50px; /* Position below navbar */
+        top: 50px;
         left: 0;
         width: 100%;
-        background-color: #008080; /* Navbar background color */
+        background-color: #008080;
         z-index: 10;
     }
+
     .logo {
-        position: absolute; /* Position it absolutely to center it */
-        left: 45%; /* Move to the center horizontally */
-        transform: translateX(-50%); /* Offset by half its width */
+        position: absolute;
+        left: 45%;
+        transform: translateX(-50%);
     }
+
     .nav-links li {
-        margin: 0; /* Remove margin for stacked items */
+        margin: 0;
     }
 
     .nav-links li:hover .submenu {
-        display: block; /* Show submenu on hover */
-    }
-}
-@media screen and (max-width:320px){
-    .logo {
-        display:none;
+        display: block;
     }
 }
 
-/* When menu icon is hovered or clicked */
+@media screen and (max-width: 320px) {
+    .logo {
+        display: none;
+    }
+}
+
 .menu-option:hover + .nav-links,
 .nav-links:hover {
-    display: flex; /* Show the nav links */
+    display: flex;
 }
 
 .language-option {
     display: flex;
     align-items: center;
-    color: white; /* White text color */
-    margin-right: 100px; /* Ensure there’s space from the right edge */
+    color: white;
+    margin-right: 100px;
 }
 
 @media screen and (max-width: 889px) {
@@ -302,22 +288,21 @@ footer {
 }
 
 .language-icon {
-    margin-right: 5px; /* Space between icon and text */
+    margin-right: 5px;
 }
 
 .language-text {
-    color: white; /* Ensure language text is white */
-    text-decoration: none; /* Remove underline */
+    color: white;
+    text-decoration: none;
 }
 
-/* Rental Form styles */
 .rental-form {
     padding: 20px;
-    background-color: rgba(0, 128, 128, 0.8); /* Semi-transparent background */
+    background-color: rgba(0, 128, 128, 0.8);
     border-radius: 10px;
     color: white;
     max-width: 600px;
-    margin: 40px auto; /* Adjusted margin for better positioning */
+    margin: 40px auto;
     margin-bottom: 60px;
 }
 
@@ -327,20 +312,20 @@ footer {
 }
 
 .form-group {
-    display: flex; /* Enable flexbox for horizontal alignment */
-    justify-content: space-between; /* Distribute space between items */
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 15px;
 }
 
 .form-group label {
     margin-bottom: 5px;
-    flex: 1; /* Allow label to take up equal space */
+    flex: 1;
 }
 
 .form-group input,
 .form-group select, 
 .form-group textarea {
-    flex: 2; /* Allow input/select to take more space */
+    flex: 2;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -366,79 +351,85 @@ footer {
 }
 
 .btn.view-vehicles:hover {
-    background-color: #006666; /* Darker teal on hover */
+    background-color: #006666;
 }
+.car-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 images per row */
+    gap: 10px; /* Space between images */
+    margin: 20px; /* Adjust as needed */
+}
+
+.car-gallery img {
+    width: 100%; /* Make images responsive */
+    height: 200px; /* Set a fixed height */
+    object-fit: cover; /* Maintain aspect ratio while covering the area */
+    border-radius: 10px; /* Optional: rounded corners */
+}
+
 @media screen and (max-width: 992px) {
-    /* Replace teal with #1a98db in all elements */
     body {
-        background-color: #f0f0f0; /* Optional: Set a background color */
+        background-color: #f0f0f0;
     }
 
     header {
-        background-color: rgba(48, 162, 228, 0.495); /* Header background color */
-        color: #e8f1f4; /* Header text color */
-        padding-bottom: 5px ;
+        background-color: rgba(48, 162, 228, 0.495);
+        color: #e8f1f4;
+        padding-bottom: 5px;
     }
 
     footer {
-        background-color: #1a98db; /* Footer background color */
-        color: white; /* Footer text color */
+        background-color: #1a98db;
+        color: white;
     }
 
     .navbar {
-        background-color: #1a98db; /* Navbar background color */
+        background-color: #1a98db;
     }
-
+    
     .nav-links a {
-        color: white; /* Link color */
+        color: white;
     }
 
     .nav-links a:hover,
     .nav-links a:focus {
-        background-color: #1a98db; /* Highlight on hover */
-        color: white; /* Text color on hover */
+        background-color: #1a98db;
+        color: white;
     }
 
     .submenu {
-        background-color: white; /* Submenu background color */
+        background-color: white;
     }
 
     .submenu a {
-        color: white; /* Submenu link color */
+        color: #1a98db;
     }
 
     .submenu a:hover {
-        background-color: #1a98db; /* Change submenu background on hover */
-        color: white; /* Submenu text color on hover */
+        background-color: #1a98db;
+        color: white;
     }
 
     .btn {
-        background-color: white; /* Button background color */
-        color: #1a98db; /* Button text color */
+        background-color: white;
+        color: #1a98db;
     }
 
     .btn:hover {
-        background-color: #1a98db; /* Darker shade on button hover */
+        background-color: #1a98db;
     }
 
-    /* Rental Form styles */
     .rental-form {
-        background-color: rgba(16, 98, 122, 0.8); /* Semi-transparent background */
-        color: white; /* Form text color */
+        background-color: rgba(16, 98, 122, 0.8);
+        color: white;
     }
 
     .form-group input,
     .form-group select, 
     .form-group textarea {
-        border-color: #ccc; /* Input border color */
-        background-color: white/* Transparent background */
-        color: black; /* Input text color */
-    }
-    .form-group input:focus,
-    .form-group select:focus {
-        border-color: #1a98db; /* Border color on focus */
-        outline: none; /* Remove outline */
-    }
+        border-color: #ccc;
+        background-color: white; /* Fixed missing semicolon */
+        color: black;}
     .btn.view-vehicles {
         background-color:white;
         color:#1a98db;
@@ -467,9 +458,10 @@ footer {
     background-color: #1a98db; /* Change background on hover */
     color: white; /* Change text color on hover */
     border-radius : 20px;
-    }
-}
 
+    }
+    
+}
 @media screen and (max-width: 600px) {
     body {
         background-color: #f0f0f0; /* Optional: Set a background color */
@@ -569,6 +561,7 @@ footer {
     color: white; /* Change text color on hover */
     border-radius : 20px;
     }
+    
 }
 @media screen and (min-width: 2560px) {
     body {
@@ -642,6 +635,5 @@ footer {
         top: 0;
         width: 100%;
         z-index: 100;
-    }
-    
+    } 
 }
