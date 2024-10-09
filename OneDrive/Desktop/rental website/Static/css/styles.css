@@ -275,8 +275,8 @@ footer {
 }
 
 .btn.view-vehicles {
-    background-color: teal;
-    color: white;
+    background-color: white;
+    color: teal;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
@@ -286,7 +286,8 @@ footer {
 }
 
 .btn.view-vehicles:hover {
-    background-color: #006666;
+    background-color: teal;
+    color :white;
 }
 .car-gallery {
     display: grid;
