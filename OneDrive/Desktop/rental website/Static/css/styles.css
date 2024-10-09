@@ -368,6 +368,9 @@ footer {
 
     .submenu {
         background-color: white;
+        left: 100%; /* Position it to the right of the parent menu item */
+        top: 20px; /* Align with the top of the parent menu item */
+        z-index: 200;
     }
 
     .submenu a {
