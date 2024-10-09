@@ -563,7 +563,9 @@ footer {
     color: white; /* Change text color on hover */
     border-radius : 20px;
     }
-    
+    .car-gallery {
+        grid-template-columns: 1fr; /* 1 image per row */
+    }
 }
 @media screen and (min-width: 2560px) {
     body {
