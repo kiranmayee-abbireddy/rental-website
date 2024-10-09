@@ -8,18 +8,6 @@ body {
     background-attachment: fixed; 
 }
 
-@media screen and (max-width: 992px) {
-    body {
-        background-image: url('https://images.pexels.com/photos/3221163/pexels-photo-3221163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
-    }
-}
-
-@media screen and (max-width: 600px) {
-    body {
-        background-image: url('https://images.pexels.com/photos/19300320/pexels-photo-19300320/free-photo-of-red-audi-rs-6-car.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
-    }
-}
-
 .welcome-message {
     text-align: center;
     margin-bottom: 10px;
@@ -220,42 +208,6 @@ footer {
     color: white;
 }
 
-@media screen and (max-width: 897px) {
-    .menu-option {
-        display: block;
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 50px;
-        left: 0;
-        width: 100%;
-        background-color: #008080;
-        z-index: 10;
-    }
-
-    .logo {
-        position: absolute;
-        left: 45%;
-        transform: translateX(-50%);
-    }
-
-    .nav-links li {
-        margin: 0;
-    }
-
-    .nav-links li:hover .submenu {
-        display: block;
-    }
-}
-
-@media screen and (max-width: 320px) {
-    .logo {
-        display: none;
-    }
-}
 
 .menu-option:hover + .nav-links,
 .nav-links:hover {
@@ -269,23 +221,6 @@ footer {
     margin-right: 100px;
 }
 
-@media screen and (max-width: 889px) {
-    .language-option {
-        margin-right: 50px;
-    }
-}
-
-@media screen and (min-width: 1573px) {
-    .language-option {
-        margin-right: 200px;
-    }
-}
-
-@media screen and (max-width: 460px) {
-    .auth-button {
-        display: none;
-    }
-}
 
 .language-icon {
     margin-right: 5px;
@@ -366,10 +301,16 @@ footer {
     object-fit: cover; /* Maintain aspect ratio while covering the area */
     border-radius: 10px; /* Optional: rounded corners */
 }
+@media screen and (max-width: 320px) {
+    .logo {
+        display: none;
+    }
+}
 
 @media screen and (max-width: 992px) {
     body {
         background-color: #f0f0f0;
+        background-image: url('https://images.pexels.com/photos/3221163/pexels-photo-3221163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
     }
 
     header {
@@ -381,6 +322,34 @@ footer {
     footer {
         background-color: #1a98db;
         color: white;
+    }
+    .menu-option {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background-color: #008080;
+        z-index: 10;
+    }
+
+    .logo {
+        position: absolute;
+        left: 45%;
+        transform: translateX(-50%);
+    }
+
+    .nav-links li {
+        margin: 0;
+    }
+
+    .nav-links li:hover .submenu {
+        display: block;
     }
 
     .navbar {
@@ -417,6 +386,9 @@ footer {
 
     .btn:hover {
         background-color: #1a98db;
+    }
+    .language-option {
+        margin-right: 50px;
     }
 
     .rental-form {
@@ -464,9 +436,11 @@ footer {
         grid-template-columns: repeat(2, 1fr); /* 2 images per row */
     }
 }
+
 @media screen and (max-width: 600px) {
     body {
         background-color: #f0f0f0; /* Optional: Set a background color */
+        background-image: url('https://images.pexels.com/photos/19300320/pexels-photo-19300320/free-photo-of-red-audi-rs-6-car.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
     }
 
     header {
@@ -548,6 +522,9 @@ footer {
     .btn.view-vehicles:hover {
         background-color: #5a0505; /* Darker teal on hover */
         color : white;
+    }
+    .auth-button {
+        display: none;
     }
     .menu a,
     .submenu a {
@@ -647,4 +624,3 @@ footer {
         height: 500px; /* Set a larger height for bigger images */
     }
 }
-
