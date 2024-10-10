@@ -191,7 +191,12 @@
                 </div> 
                 <div class="form-group">
                     <label for="mobilenumber">Mobile Number: </label>
-                    <input type="text" id ="mobilenumber" placeholder="Enter your mobile number" name="mobilenumber" required>
+                    <div style="display: flex; align-items: center;">
+                        <!-- Fixed +91 for India -->
+                        <input type="text" id="country-code" value="+91" readonly style=" width : 10px; text-align: center; margin-right: 5px;">
+                        <!-- Mobile number input for exactly 10 digits -->
+                        <input type="text" id="mobilenumber" placeholder="Enter your mobile number" name="mobilenumber" style ="width : 350px;" required maxlength="10">
+                    </div>
                 </div>
                 <div id="mobilenumber-error" class="error-message" style="display: none;"></div>
                 <div class="form-group">
