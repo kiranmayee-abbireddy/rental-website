@@ -80,3 +80,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const dropoffLocationInput = document.getElementById('dropoff-location');
+
+    // Initialize the Google Places Autocomplete for drop-off location
+    const autocomplete = new google.maps.places.Autocomplete(dropoffLocationInput);
+    autocomplete.setTypes(['geocode']); // Limit suggestions to geocode locations
+
+    // Listen for the place changed event
+    autocomplete.addListener('place_changed', function() {
+        const place = autocomplete.getPlace();
+        if (!place.geometry) {
+            console.log("No details available for input: '" + place.name + "'");
+        } else {
+            // You can use the place details as needed
+            console.log("Place details:", place);
+        }
+    });
+});
+
