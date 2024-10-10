@@ -44,11 +44,20 @@ document.addEventListener('DOMContentLoaded', function(){
     numberInput.addEventListener("blur", function() {
         const value = numberInput.value;
         if (value.length < 10) {
-            errorMessage.textContent = "Please enter exactly 10 digits."; // Set error message
+            errorMessage.textContent = "Please enter 10 digits."; // Set error message
             errorMessage.style.display = "block";
         } else {
             errorMessage.textContent = ""; 
             errorMessage.style.display = "none"; 
         }
+    });
+
+    function getFullNumber() {
+        const countryCode = "+91"; 
+        return countryCode + numberInput.value; 
+    }
+    document.getElementById('submit-button').addEventListener('click', function() {
+        const fullNumber = getFullNumber();
+        console.log("Full Number: ", fullNumber); // Output the full number with country code
     });
 });
