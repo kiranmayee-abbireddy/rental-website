@@ -61,3 +61,22 @@ document.addEventListener('DOMContentLoaded', function(){
         console.log("Full Number: ", fullNumber); // Output the full number with country code
     });
 });
+// Wait for the DOM to load
+document.addEventListener('DOMContentLoaded', function() {
+    const pickupLocationInput = document.getElementById('pickup-location');
+
+    // Initialize the Google Places Autocomplete
+    const autocomplete = new google.maps.places.Autocomplete(pickupLocationInput);
+    autocomplete.setTypes(['geocode']); // Limit suggestions to geocode locations
+
+    // Listen for the place changed event
+    autocomplete.addListener('place_changed', function() {
+        const place = autocomplete.getPlace();
+        if (!place.geometry) {
+            console.log("No details available for input: '" + place.name + "'");
+        } else {
+            // You can use the place details as needed
+            console.log("Place details:", place);
+        }
+    });
+});
