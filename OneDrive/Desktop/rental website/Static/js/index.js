@@ -99,3 +99,46 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const pickupLocationInput = document.getElementById('pickup-location');
+    const dropoffLocationInput = document.getElementById('dropoff-location');
+    const distanceResult = document.getElementById('distance-result');
+
+    // Initialize Google Places Autocomplete for both locations
+    const pickupAutocomplete = new google.maps.places.Autocomplete(pickupLocationInput);
+    const dropoffAutocomplete = new google.maps.places.Autocomplete(dropoffLocationInput);
+    pickupAutocomplete.setTypes(['geocode']);
+    dropoffAutocomplete.setTypes(['geocode']);
+
+    // Function to calculate distance
+    function calculateDistance() {
+        const pickupPlace = pickupAutocomplete.getPlace();
+        const dropoffPlace = dropoffAutocomplete.getPlace();
+
+        if (pickupPlace && dropoffPlace) {
+            const service = new google.maps.DistanceMatrixService();
+            service.getDistanceMatrix({
+                origins: [pickupPlace.formatted_address],
+                destinations: [dropoffPlace.formatted_address],
+                travelMode: 'DRIVING',
+                unitSystem: google.maps.UnitSystem.METRIC,
+            }, displayDistance);
+        } else {
+            distanceResult.textContent = ""; // Clear the distance result if not valid
+        }
+    }
+
+    // Display distance in the designated area
+    function displayDistance(response, status) {
+        if (status == 'OK') {
+            const distance = response.rows[0].elements[0].distance.text;
+            distanceResult.textContent = `Distance: ${distance}`;
+        } else {
+            distanceResult.textContent = "Unable to calculate distance.";
+        }
+    }
+
+    // Add event listeners to calculate distance when locations change
+    pickupAutocomplete.addListener('place_changed', calculateDistance);
+    dropoffAutocomplete.addListener('place_changed', calculateDistance);
+});
