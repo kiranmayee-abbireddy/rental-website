@@ -340,11 +340,11 @@ footer {
     transform: scale(1.05);
 }
 .error-message {
-    color: red; /* Red text for error message */
+    color: white; 
     font-size: 0.9em; /* Slightly smaller font */
     text-align: center;
+    margin-bottom: 10px;
 }
-
 
 @media screen and (max-width: 320px) {
     .logo {
@@ -583,7 +583,7 @@ footer {
     .form-group select, 
     .form-group textarea {
         border-color: #ccc; /* Input border color */
-        background-color: white/* Transparent background */
+        background-color: white;/* Transparent background */
         color: black; /* Input text color */
     }
     .form-group input:focus,
