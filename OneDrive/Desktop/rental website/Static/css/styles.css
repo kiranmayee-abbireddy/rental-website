@@ -399,6 +399,20 @@ footer {
 .car-option img:hover {
     animation: oscillate 3s infinite; /* Infinite oscillating animation */
 }
+.car-option label {
+    display: block;
+    padding: 10px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.car-option input[type="radio"]:checked + label {
+    border-color: teal; /* Highlight color */
+    background-color: #ffffff; /* Optional background for selected state */
+    border-radius:10px;
+}
+
 
 .btn{
     background-color: white;
