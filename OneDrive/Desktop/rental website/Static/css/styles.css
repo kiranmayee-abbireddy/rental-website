@@ -418,13 +418,6 @@ footer {
     border-radius: 10px;
 }
 
-/* Optional hover effect on label */
-.car-option label:hover {
-    background-color: #f0f0f0; /* Optional hover background color */
-}
-
-
-
 .btn{
     background-color: white;
     color: teal;
@@ -438,6 +431,9 @@ footer {
 .btn:hover {
     background-color: teal;
     color :white;
+}
+.error-message{
+    text-align: right;
 }
 
 
