@@ -386,7 +386,7 @@ footer {
     margin-top: 20px;
     color: teal; /* Teal text color */
     background-color: white; /* Ensure white background for each option */
-    transition: box-shadow 0.3s, transform 0.3s; /* Transition for shadow and scale */
+    transition: border 0.3s, transform 0.3s; /* Transition for border and scale */
     overflow: hidden; /* Prevent overflow of child elements */
 }
 
@@ -407,14 +407,15 @@ footer {
     display: block;
     padding: 10px;
     cursor: pointer;
-    transition: box-shadow 0.3s, transform 0.3s; /* Added shadow and scale transitions */
+    transition: border 0.3s, transform 0.3s; /* Added border and scale transitions */
 }
 
 /* Styles for checked radio button */
 .car-option input[type="radio"]:checked + label {
-    background-color: #ffffff; /* Optional background for selected state */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for selected option */
+    background-color: white; /* Keep the label background white */
+    border: 2px solid teal; /* Border for the selected option */
     transform: scale(1.05); /* Slightly enlarge the selected option */
+    border-radius: 10px;
 }
 
 /* Optional hover effect on label */
@@ -834,7 +835,7 @@ footer {
     }
     @keyframes oscillate {
         0% { transform: translateX(0); }
-        50% { transform: translateX(15px); } /* Move to the right */
+        50% { transform: translateX(12px); } /* Move to the right */
         100% { transform: translateX(0); } /* Back to the original position */
     }
 }
