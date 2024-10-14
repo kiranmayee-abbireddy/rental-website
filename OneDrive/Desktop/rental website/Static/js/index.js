@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener('DOMContentLoaded', function(){
-    const numberInput = document.getElementById("mobile-number");
+    const numberInput = document.getElementById("mobile");
     const errorMessage = document.getElementById("mobilenumber-error");
 
     numberInput.addEventListener("keydown", function(event){
