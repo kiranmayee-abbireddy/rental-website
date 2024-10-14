@@ -143,41 +143,8 @@ document.addEventListener('DOMContentLoaded', function() {
     pickupAutocomplete.addListener('place_changed', calculateDistance);
     dropoffAutocomplete.addListener('place_changed', calculateDistance);
 });
-document.addEventListener('DOMContentLoaded', function() {
-    const pickupDateInput = document.getElementById('pickup-date');
-    const pickupTimeInput = document.getElementById('pickup-time');
-    const dropoffDateInput = document.getElementById('dropoff-date');
-    const dropoffTimeInput = document.getElementById('dropoff-time');
-    const timeResult = document.getElementById('time-result');
 
-    function calculateTimeDifference() {
-        const pickupDate = new Date(pickupDateInput.value + 'T' + pickupTimeInput.value);
-        const dropoffDate = new Date(dropoffDateInput.value + 'T' + dropoffTimeInput.value);
 
-        if (pickupDate && dropoffDate) {
-            const timeDifference = dropoffDate - pickupDate; // time difference in milliseconds
-
-            if (timeDifference >= 0) {
-                const totalHours = Math.floor(timeDifference / 3600000); // total hours
-                const totalDays = Math.floor(totalHours / 24); // calculate total days
-                const remainingHours = totalHours % 24; // remaining hours
-
-                // Display result with total days and hours
-                timeResult.textContent = `Total Duration: ${totalDays} days and ${remainingHours} hours`;
-            } else {
-                timeResult.textContent = "Drop-off time must be after pickup time.";
-            }
-        } else {
-            timeResult.textContent = ""; // Clear the result if not valid
-        }
-    }
-
-    // Add event listeners to calculate time when values change
-    pickupDateInput.addEventListener('change', calculateTimeDifference);
-    pickupTimeInput.addEventListener('change', calculateTimeDifference);
-    dropoffDateInput.addEventListener('change', calculateTimeDifference);
-    dropoffTimeInput.addEventListener('change', calculateTimeDifference);
-});
 // Ensure this code is wrapped in a script tag or a separate JS file
 document.addEventListener('DOMContentLoaded', function () {
     const viewVehiclesButton = document.getElementById('view-vehicles');
@@ -191,4 +158,48 @@ document.addEventListener('DOMContentLoaded', function () {
             carOptions.style.display = 'none'; // Hide the car options
         }
     });
+});
+document.addEventListener('DOMContentLoaded', function () {
+    const pickupLocationInput = document.getElementById('pickup-location');
+    const dropoffLocationInput = document.getElementById('dropoff-location');
+    const distanceResult = document.getElementById('distance-result');
+    const timeResult = document.getElementById('time-result');
+
+    const pickupAutocomplete = new google.maps.places.Autocomplete(pickupLocationInput);
+    const dropoffAutocomplete = new google.maps.places.Autocomplete(dropoffLocationInput);
+    pickupAutocomplete.setTypes(['geocode']);
+    dropoffAutocomplete.setTypes(['geocode']);
+
+    function calculateDistance() {
+        const pickupPlace = pickupAutocomplete.getPlace();
+        const dropoffPlace = dropoffAutocomplete.getPlace();
+
+        if (pickupPlace && dropoffPlace) {
+            const service = new google.maps.DistanceMatrixService();
+            service.getDistanceMatrix({
+                origins: [pickupPlace.formatted_address],
+                destinations: [dropoffPlace.formatted_address],
+                travelMode: 'DRIVING',
+                unitSystem: google.maps.UnitSystem.METRIC,
+            }, displayDistance);
+        } else {
+            distanceResult.textContent = ""; // Clear the distance result if not valid
+            timeResult.textContent = ""; // Clear the time result if not valid
+        }
+    }
+
+    function displayDistance(response, status) {
+        if (status == 'OK') {
+            const distance = response.rows[0].elements[0].distance.value / 1000; // distance in kilometers
+            const duration = response.rows[0].elements[0].duration.text; // duration in human-readable format
+            distanceResult.textContent = `Distance: ${distance} km`;
+            timeResult.textContent = `Estimated Time: ${duration}`; // Display estimated time
+        } else {
+            distanceResult.textContent = "Unable to calculate distance.";
+            timeResult.textContent = ""; // Clear time result if distance calculation fails
+        }
+    }
+
+    pickupAutocomplete.addListener('place_changed', calculateDistance);
+    dropoffAutocomplete.addListener('place_changed', calculateDistance);
 });
