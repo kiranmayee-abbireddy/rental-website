@@ -203,3 +203,57 @@ document.addEventListener('DOMContentLoaded', function () {
     pickupAutocomplete.addListener('place_changed', calculateDistance);
     dropoffAutocomplete.addListener('place_changed', calculateDistance);
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const carOptions = document.querySelectorAll('.car-option'); // Select all car options
+    const timeResult = document.getElementById('time-result'); // Element displaying estimated time
+    const priceResult = document.getElementById('estimated-price'); // Element to display the estimated price
+    let selectedPrice = 0; // Variable to store the selected car price
+
+    // Set prices for each car option
+    const prices = [200, 500, 700, 900]; // Prices in order of car options
+
+    // Add click event to each car option
+    carOptions.forEach((option, index) => {
+        option.addEventListener('click', function () {
+            // Remove highlight from all options
+            carOptions.forEach(opt => opt.style.border = 'none');
+
+            // Set the selected price based on the clicked option
+            selectedPrice = prices[index];
+
+            // Calculate and display the price
+            calculateAndDisplayPrice();
+        });
+    });
+
+    // Function to calculate and display price based on the selected option and time
+    function calculateAndDisplayPrice() {
+        if (timeResult.textContent) {
+            // Match the time in days, hours, and minutes (e.g., "1 day 2 hours 30 mins" or "2 hours 45 mins")
+            const timeText = timeResult.textContent.match(/(\d+)\s*day(?:s)?(?:\s*(\d+)\s*hour(?:s)?)?(?:\s*(\d+)\s*min(?:utes)?)?/);
+
+            let totalHours = 0;
+
+            if (timeText) {
+                const days = parseInt(timeText[1], 10) || 0; // Extract days (if present)
+                const hours = parseInt(timeText[2], 10) || 0; // Extract hours (if present)
+                const minutes = parseInt(timeText[3], 10) || 0; // Extract minutes (if present)
+
+                // Convert total time into hours
+                totalHours = (days * 24) + hours + (minutes / 60); // Example: 1 day 2 hours 30 mins = 26.5 hours
+
+                // Calculate the total price
+                const totalPrice = selectedPrice * totalHours;
+
+                // Display the total price
+                priceResult.textContent = `Estimated Price: Rs ${totalPrice.toFixed(2)}`; // Show price with 2 decimals
+            } else {
+                priceResult.textContent = "Unable to calculate price.";
+            }
+        } else {
+            priceResult.textContent = "Please enter pickup and dropoff locations.";
+        }
+    }
+});
+
