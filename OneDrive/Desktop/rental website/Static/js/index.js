@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener('DOMContentLoaded', function(){
-    const numberInput = document.getElementById("mobilenumber");
+    const numberInput = document.getElementById("mobile-number");
     const errorMessage = document.getElementById("mobilenumber-error");
 
     numberInput.addEventListener("keydown", function(event){
@@ -56,7 +56,8 @@ document.addEventListener('DOMContentLoaded', function(){
         const countryCode = "+91"; 
         return countryCode + numberInput.value; 
     }
-    document.getElementById('submit-button').addEventListener('click', function() {
+    
+    document.getElementById('submit').addEventListener('click', function() {
         const fullNumber = getFullNumber();
         console.log("Full Number: ", fullNumber); // Output the full number with country code
     });
@@ -141,4 +142,53 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add event listeners to calculate distance when locations change
     pickupAutocomplete.addListener('place_changed', calculateDistance);
     dropoffAutocomplete.addListener('place_changed', calculateDistance);
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const pickupDateInput = document.getElementById('pickup-date');
+    const pickupTimeInput = document.getElementById('pickup-time');
+    const dropoffDateInput = document.getElementById('dropoff-date');
+    const dropoffTimeInput = document.getElementById('dropoff-time');
+    const timeResult = document.getElementById('time-result');
+
+    function calculateTimeDifference() {
+        const pickupDate = new Date(pickupDateInput.value + 'T' + pickupTimeInput.value);
+        const dropoffDate = new Date(dropoffDateInput.value + 'T' + dropoffTimeInput.value);
+
+        if (pickupDate && dropoffDate) {
+            const timeDifference = dropoffDate - pickupDate; // time difference in milliseconds
+
+            if (timeDifference >= 0) {
+                const totalHours = Math.floor(timeDifference / 3600000); // total hours
+                const totalDays = Math.floor(totalHours / 24); // calculate total days
+                const remainingHours = totalHours % 24; // remaining hours
+
+                // Display result with total days and hours
+                timeResult.textContent = `Total Duration: ${totalDays} days and ${remainingHours} hours`;
+            } else {
+                timeResult.textContent = "Drop-off time must be after pickup time.";
+            }
+        } else {
+            timeResult.textContent = ""; // Clear the result if not valid
+        }
+    }
+
+    // Add event listeners to calculate time when values change
+    pickupDateInput.addEventListener('change', calculateTimeDifference);
+    pickupTimeInput.addEventListener('change', calculateTimeDifference);
+    dropoffDateInput.addEventListener('change', calculateTimeDifference);
+    dropoffTimeInput.addEventListener('change', calculateTimeDifference);
+});
+// Ensure this code is wrapped in a script tag or a separate JS file
+document.addEventListener('DOMContentLoaded', function () {
+    const viewVehiclesButton = document.getElementById('view-vehicles');
+    const carOptions = document.getElementById('car-options');
+
+    viewVehiclesButton.addEventListener('click', function () {
+        // Toggle the display of the car options
+        if (carOptions.style.display === 'none' || carOptions.style.display === '') {
+            carOptions.style.display = 'flex'; // Show the car options
+        } else {
+            carOptions.style.display = 'none'; // Hide the car options
+        }
+    });
 });
