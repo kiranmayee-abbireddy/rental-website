@@ -371,6 +371,27 @@ footer {
 .discount-item:hover {
     transform: scale(1.05);
 }
+#car-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.car-option {
+    flex: 1 1 30%;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.car-option img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
 
 
 @media screen and (max-width: 992px) {
