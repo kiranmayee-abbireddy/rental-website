@@ -269,11 +269,43 @@ footer {
     color: black;
 }
 
+
+
 .form-group input:focus,
 .form-group select:focus {
     border-color: teal;
     outline: none;
 }
+.mobile-input {
+    display: flex; /* Use flexbox for side-by-side layout */
+    align-items: center; /* Center items vertically */
+}
+
+.country-code {
+    background-color: #0f6d6af5; /* Light background for country code */
+    padding: 10px; /* Padding around the country code */
+    border: 1px solid #ccc; /* Border around the country code */
+    border-right: none; /* Remove right border */
+    border-radius: 5px 0 0 5px; /* Rounded corners for the left side */
+    width: 40px; /* Fixed width for the country code */
+    text-align: center; /* Center the country code text */
+    flex-shrink: 0; /* Prevent country code from shrinking */
+    color:white;
+}
+
+.mobile-input input[type="tel"] {
+    flex: 1; /* Make the input field take the remaining space */
+    min-width: 0; /* Allows the input field to shrink below the default size */
+    padding: 10px; /* Padding inside the input field */
+    border: 1px solid #ccc; /* Border around the input field */
+    border-radius: 0 5px 5px 0; /* Rounded corners for the right side */
+}
+
+.mobile-input {
+    width: 100%; /* Make the container full width */
+    max-width: 408px; /* Optional: limit max width */
+}
+
 
 .btn.view-vehicles {
     background-color: white;
@@ -339,31 +371,7 @@ footer {
 .discount-item:hover {
     transform: scale(1.05);
 }
-.error-message {
-    color: white; 
-    font-size: 0.9em; /* Slightly smaller font */
-    text-align: center;
-    margin-bottom: 10px;
-}
 
-@media screen and (max-width: 320px) {
-    .logo {
-        display: none;
-    }
-    .menu{
-        font-size: 15px;
-    }
-    .submenu {
-        max-width: 115%; /* Allow more width for small screens */
-        left: 0; /* Align with the left side */
-        white-space: normal; /* Ensure text can wrap */
-        overflow: visible; /* Ensure all text is visible */
-        margin-left: 3px;
-    }
-    .submenu a {
-        font-size: 15px; /* Further decrease font size for very small screens */
-    }
-}  
 
 @media screen and (max-width: 992px) {
     body {
@@ -511,6 +519,21 @@ footer {
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         transition: transform 0.3s;
     }
+    .mobile-input {
+        width: 100%; /* Make the container full width */
+        max-width: 408px; /* Optional: limit max width */
+    }
+    .country-code {
+        background-color: #177ba9f5; /* Light background for country code */
+        padding: 10px; /* Padding around the country code */
+        border: 1px solid #ccc; /* Border around the country code */
+        border-right: none; /* Remove right border */
+        border-radius: 5px 0 0 5px; /* Rounded corners for the left side */
+        width: 40px; /* Fixed width for the country code */
+        text-align: center; /* Center the country code text */
+        flex-shrink: 0; /* Prevent country code from shrinking */
+        color:white;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -591,6 +614,37 @@ footer {
         border-color: #5a0505; /* Border color on focus */
         outline: none; /* Remove outline */
     }
+
+    .mobile-input {
+        flex-direction: row; /* Stack on smaller screens */
+        align-items: center; /* Full width for mobile number input */
+    }
+    
+    .country-code {
+        width: 10%; /* Full width for country code on small screens */
+        border-radius: 5px; /* Rounded corners for the top */
+    }
+    .country-code {
+        background-color: #6e0707f5; /* Light background for country code */
+        padding: 10px; /* Padding around the country code */
+        border: 1px solid #ccc; /* Border around the country code */
+        border-right: none; /* Remove right border */
+        border-radius: 5px 0 0 5px; /* Rounded corners for the left side */
+        width: 40px; /* Fixed width for the country code */
+        text-align: center; /* Center the country code text */
+        flex-shrink: 0; /* Prevent country code from shrinking */
+        color:white;
+    }
+
+    .mobile-input input[type="tel"] {
+        border-radius: 5px; /* Rounded corners for the bottom */
+        width: 80%;
+    }
+    .mobile-input {
+        width: 100%; /* Make the container full width */
+        max-width: 260px; /* Optional: limit max width */
+    }
+    
     .btn.view-vehicles {
         background-color:white;
         color:#5a0505;
@@ -641,6 +695,46 @@ footer {
         transition: transform 0.3s;
     }
 }
+@media screen and (max-width :380px){
+    .mobile-input {
+        width: 100%; /* Make the container full width */
+        max-width: 225px; /* Optional: limit max width */
+    }
+}
+@media screen and (max-width: 320px) {
+    .logo {
+        display: none;
+    }
+    .menu{
+        font-size: 15px;
+    }
+    .submenu {
+        max-width: 115%; /* Allow more width for small screens */
+        left: 0; /* Align with the left side */
+        white-space: normal; /* Ensure text can wrap */
+        overflow: visible; /* Ensure all text is visible */
+        margin-left: 3px;
+    }
+    .submenu a {
+        font-size: 15px; /* Further decrease font size for very small screens */
+    }
+    .mobile-input {
+        width: 100%; /* Make the container full width */
+        max-width: 190px; /* Optional: limit max width */
+    }
+    .country-code {
+        background-color: #6e0707f5; /* Light background for country code */
+        padding: 10px; /* Padding around the country code */
+        border: 1px solid #ccc; /* Border around the country code */
+        border-right: none; /* Remove right border */
+        border-radius: 5px 0 0 5px; /* Rounded corners for the left side */
+        width: 40px; /* Fixed width for the country code */
+        text-align: center; /* Center the country code text */
+        flex-shrink: 0; /* Prevent country code from shrinking */
+        color:white;
+    }
+}
+
 @media screen and (min-width: 2560px) {
     body {
         font-size: 1.5em; /* Adjust base font size as needed */
@@ -728,5 +822,20 @@ footer {
         width: 800px; /* Set a fixed width for each item */
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         transition: transform 0.3s;
+    }
+    .country-code {
+        background-color: #0f6d6af5; /* Light background for country code */
+        padding: 30px; /* Padding around the country code */
+        border: 1px solid #ccc; /* Border around the country code */
+        border-right: none; /* Remove right border */
+        border-radius: 10px 0 0 5px; /* Rounded corners for the left side */
+        width: 40px; /* Fixed width for the country code */
+        text-align: center; /* Center the country code text */
+        flex-shrink: 0; /* Prevent country code from shrinking */
+        color:white;
+    }
+    .mobile-input {
+        width: 100%; /* Make the container full width */
+        max-width: 1008px; /* Optional: limit max width */
     }
 }
