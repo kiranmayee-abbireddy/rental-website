@@ -381,14 +381,16 @@ footer {
 .car-option {
     flex: 1 1 30%;
     text-align: center;
-    border: 1px solid #ccc;
     padding: 20px;
     border-radius: 8px;
     margin-top: 20px;
     color: teal; /* Teal text color */
     background-color: white; /* Ensure white background for each option */
+    transition: box-shadow 0.3s, transform 0.3s; /* Transition for shadow and scale */
+    overflow: hidden; /* Prevent overflow of child elements */
 }
 
+/* Image styles */
 .car-option img {
     max-width: 100%;
     height: auto;
@@ -399,19 +401,27 @@ footer {
 .car-option img:hover {
     animation: oscillate 3s infinite; /* Infinite oscillating animation */
 }
+
+/* Label styles */
 .car-option label {
     display: block;
     padding: 10px;
-    border: 2px solid transparent;
     cursor: pointer;
-    transition: border-color 0.3s;
+    transition: box-shadow 0.3s, transform 0.3s; /* Added shadow and scale transitions */
 }
 
+/* Styles for checked radio button */
 .car-option input[type="radio"]:checked + label {
-    border-color: teal; /* Highlight color */
     background-color: #ffffff; /* Optional background for selected state */
-    border-radius:10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for selected option */
+    transform: scale(1.05); /* Slightly enlarge the selected option */
 }
+
+/* Optional hover effect on label */
+.car-option label:hover {
+    background-color: #f0f0f0; /* Optional hover background color */
+}
+
 
 
 .btn{
@@ -526,7 +536,9 @@ footer {
     .language-option {
         margin-right: 50px;
     }
-
+    .car-option input[type="radio"]:checked + label {
+        border-color: #1a98db; /* Highlight color */
+    }
     .rental-form {
         background-color: rgba(16, 98, 122, 0.8);
         color: white;
@@ -662,6 +674,9 @@ footer {
     .btn:hover {
         background-color: #5a0505; /* Darker shade on button hover */
     }
+    .car-option input[type="radio"]:checked + label {
+        border-color: #5a0505; /* Highlight color */
+    }
 
     /* Rental Form styles */
     .rental-form {
@@ -769,6 +784,11 @@ footer {
     .car-option {
         flex: 1 1 30%;
     }
+    @keyframes oscillate {
+        0% { transform: translateX(0); }
+        50% { transform: translateX(10px); } /* Move to the right */
+        100% { transform: translateX(0); } /* Back to the original position */
+    }
     
 }
 @media screen and (max-width :380px){
@@ -811,6 +831,11 @@ footer {
         text-align: center; /* Center the country code text */
         flex-shrink: 0; /* Prevent country code from shrinking */
         color:white;
+    }
+    @keyframes oscillate {
+        0% { transform: translateX(0); }
+        50% { transform: translateX(15px); } /* Move to the right */
+        100% { transform: translateX(0); } /* Back to the original position */
     }
 }
 
