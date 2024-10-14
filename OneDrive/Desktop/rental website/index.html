@@ -131,8 +131,12 @@
                     <label for="dropoff-time">Drop-off Time</label>
                     <input type="time" id="dropoff-time" required>
                 </div>
+                <div class="form-group">
+                    <label></label>
+                    <div id="time-result" style="margin-top: 10px; font-weight: bold;"></div>
+                </div>
 
-                <button type="submit" class="btn view-vehicles">View Vehicles</button>
+                <button type="submit" class="btn view-vehicles" id = "submit">View Vehicles</button>
             </form>
         </section>
         <section>
@@ -194,12 +198,10 @@
                     <input type="text"  id="name" placeholder="Enter your name" name="name" required>
                 </div> 
                 <div class="form-group">
-                    <label for="mobilenumber">Mobile Number: </label>
-                    <div style="display: flex; align-items: center;">
-                        <!-- Fixed +91 for India -->
-                        <input type="text" id="country-code" value="+91" readonly style=" width : 10px; text-align: center; margin-right: 5px;">
-                        <!-- Mobile number input for exactly 10 digits -->
-                        <input type="text" id="mobilenumber" placeholder="Enter your mobile number" name="mobilenumber" style ="width : 350px;" required maxlength="10">
+                    <label for="mobile">Mobile Number:</label>
+                    <div class="mobile-input">
+                        <span class="country-code">+91</span> <!-- Fixed country code here -->
+                        <input type="tel" id="mobile" placeholder="Enter your mobile number" name="mobile" required>
                     </div>
                 </div>
                 <div id="mobilenumber-error" class="error-message" style="display: none;"></div>
