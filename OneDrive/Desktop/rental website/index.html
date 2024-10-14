@@ -128,28 +128,42 @@
                 </div>
                 <button type="button" class="btn" id="view-vehicles">View Vehicles</button>
         
-                <div id="car-options" style = "display:none;">
+                <div id="car-options" style="display: none;">
                     <div class="car-option">
-                        <h3>4 Seater : Maruti S-Presso</h3>
-                        <img src= "https://imgd-ct.aeplcdn.com/1056x660/n/6o6d33a_1591339.jpg?q=80"  width="200px">
-                        <p>Price: Rs 200/hour</p>
-                    </div>
-                    <div class="car-option">
-                        <h3>6 Seater : MG ZS Hybrid+ </h3>
-                        <img src ="https://imgd.aeplcdn.com/664x374/n/cw/ec/110437/zs-ev-exterior-right-front-three-quarter-69.jpeg?isig=0&q=80" width="200px">
-                        <p>Price: Rs 500/hour</p>
-                    </div>
-                    <div class ="car-option">
-                        <h3>8 Seater : Mahindra Xylo</h3>
-                        <img src ="https://imgd.aeplcdn.com/310x174/n/cw/ec/131181/bolero-neo-exterior-right-front-three-quarter-2.jpeg?isig=0&q=80" width="200px">
-                        <p>Price: Rs 700/hour</p>
+                        <input type="radio" id="car1" name="car" value="200" hidden>
+                        <label for="car1">
+                            <h3>4 Seater: Maruti S-Presso</h3>
+                            <img src="https://imgd-ct.aeplcdn.com/1056x660/n/6o6d33a_1591339.jpg?q=80" width="200px">
+                            <p>Price: Rs 200/hour</p>
+                        </label>
                     </div>
                     <div class="car-option">
-                        <h3>9 Seater : Mahindra Scorpio</h3>
-                        <img src ="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202004/Mahindra_Scorpio_BS6_Napoli_Bl.jpeg?size=690:388" width="200px">
-                        <p>Price: Rs 900/hour</p>
+                        <input type="radio" id="car2" name="car" value="500" hidden>
+                        <label for="car2">
+                            <h3>6 Seater: MG ZS Hybrid plus</h3>
+                            <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/110437/zs-ev-exterior-right-front-three-quarter-69.jpeg?isig=0&q=80" width="200px">
+                            <p>Price: Rs 500/hour</p>
+                        </label>
                     </div>
+                    <div class="car-option">
+                        <input type="radio" id="car3" name="car" value="700" hidden>
+                        <label for="car3">
+                            <h3>8 Seater: Mahindra  Xylo New</h3>
+                            <img src="https://imgd.aeplcdn.com/310x174/n/cw/ec/131181/bolero-neo-exterior-right-front-three-quarter-2.jpeg?isig=0&q=80" width="200px">
+                            <p>Price: Rs 700/hour</p>
+                        </label>
+                    </div>
+                    <div class="car-option">
+                        <input type="radio" id="car4" name="car" value="900" hidden>
+                        <label for="car4">
+                            <h3>9 Seater: Mahindra Scorpio </h3>
+                            <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202004/Mahindra_Scorpio_BS6_Napoli_Bl.jpeg?size=690:388" width="200px">
+                            <p>Price: Rs 900/hour</p>
+                        </label>
+                    </div>
+                    <div id="estimated-price" style="margin-top: 20px; font-weight: bold;">Estimated Price: Rs 0</div>
                 </div>
+                
             </form>
         </section>
         <section>
