@@ -445,63 +445,28 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    font-family: Arial, sans-serif;
 }
 
-h1 {
-    text-align: center;
-}
-
+/* Grid Container */
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Two equal columns */
-    gap: 20px;
+    gap: 20px; /* Space between the boxes */
 }
 
+/* Left and Right Boxes */
 .grid-item {
-    background-color: #f8f9fa; /* Light background for boxes */
-    border: 1px solid #ced4da; /* Border for boxes */
-    border-radius: 5px; /* Rounded corners */
+    background-color: #f8f8f8;
+    border-radius: 8px;
     padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.left-box {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.right-box {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.journey {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center align items */
-}
-
+/* Arrow Style */
 .arrow {
-    font-size: 24px; /* Adjust size for the arrow */
-    margin: 10px 0; /* Space around the arrow */
-}
-
-button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #007bff; /* Bootstrap primary color */
-    color: white;
-    border: none;
-    border-radius: 5px;
-}
-
-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    font-size: 24px; /* Adjust the arrow size */
+    align-self: center; /* Center the arrow vertically */
 }
 
 
@@ -743,7 +708,9 @@ button:hover {
     .car-option input[type="radio"]:checked + label {
         border-color: #5a0505; /* Highlight color */
     }
-
+    .grid-container {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
     /* Rental Form styles */
     .rental-form {
         background-color: rgba(90, 5, 5, 0.8); /* Semi-transparent background */
