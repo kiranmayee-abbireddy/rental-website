@@ -452,22 +452,71 @@ footer {
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Two equal columns */
-    gap: 20px; /* Space between the boxes */
+    gap: 0px; /* Space between the boxes */
+    margin-bottom: 20px;
 }
 
 /* Left and Right Boxes */
 .grid-item {
-    background-color: #f8f8f8;
-    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.913);
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Arrow Style */
-.arrow {
-    font-size: 24px; /* Adjust the arrow size */
-    align-self: center; /* Center the arrow vertically */
+.journey {
+    display: flex;
+    flex-wrap: wrap; /* Allows the items to wrap */
+    align-items: center; /* Centers items vertically */
+    justify-content: space-between; /* Distributes space between items */
+    margin: 10px 0; /* Adds margin between journey sections */
 }
+
+/* Arrow Styling */
+.arrow {
+    font-size: 36px; /* Adjust arrow size */
+    margin: 0 15px; /* Adds space around the arrow */
+    font-weight: bold; /* Makes the arrow bolder */
+}
+
+/* Location and Time Styles */
+.journey-info {
+    display: flex;
+    flex-direction: row; /* Stacks items vertically */
+    align-items: flex-start; /* Aligns text to the left */
+}
+
+.location, .time {
+    margin-bottom: 5px; /* Adds space between items */
+}
+.customer-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns layout */
+    gap: 15px; /* Space between grid items */
+}
+
+/* Input Fields Styles */
+.customer-info input {
+    width: 100%; /* Makes input fields full-width */
+    padding: 8px; /* Adds padding inside the input */
+    border: 1px solid #ccc; /* Border styling */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background for inputs */
+}
+
+.wide-input {
+    grid-column: span 2; /* Makes the input span across two columns */
+    width: calc(100%); /* Adjust width to fill the space better */
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .journey {
+        flex-direction: column; /* Stacks items vertically on smaller screens */
+        align-items: flex-start; /* Aligns items to the left */
+    }
+}
+
 
 
 
