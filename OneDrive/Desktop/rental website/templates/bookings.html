@@ -87,47 +87,52 @@
         </div>
     </nav>
     <div class="container">
-        <h1>Booking Details</h1>
+        <h1 style ="color: white; text-align: center; margin-top: 30px;">Booking Details</h1>
         <div class="grid-container">
             <div class="grid-item left-box">
-                <h2>Journey Details</h2>
+                <h2 style="color: black;">Journey Details</h2>
                 <div class="journey">
                     <div class="journey-info">
                         <div class="location">
                             <h3>Pick-up Location</h3>
                             <p id="pickup-location"></p>
                         </div>
-                        <div class="arrow">➡️</div>
+                        <div class="arrow">→</div>
                         <div class="time">
                             <h3>Drop-off Location</h3>
                             <p id="dropoff-location"></p>
                         </div>
                     </div>
-                    <div class="journey-info">
-                        <div class="time">
-                            <h3>Pick-up Time</h3>
-                            <p id="pickup-time"></p>
-                        </div>
-                        <div class="location">
-                            <h3>Drop-off Time</h3>
-                            <p id="dropoff-time"></p>
-                        </div>
-                    </div>
                 </div>
+                <p>Pick-up Time: <span id ="pickup-time"></span></p>
                 <p>Distance: <span id="distance-result"></span></p>
                 <p>Time: <span id="time-result"></span></p>
                 <p>Selected Vehicle: <span id="selected-vehicle"></span></p>
                 <p>Price: <span id="estimated-price"></span></p>
             </div>
             <div class="grid-item right-box">
-                <h2>Customer Information</h2>
-                <p>Name: <span id="customer-name"></span></p>
-                <p>Contact Number: <span id="customer-number"></span></p>
-                <p>Email: <span id="customer-email"></span></p>
-                <p>Address: <span id="customer-address"></span></p>
+                <h2 style="color: black;">Customer Information</h2>
+                <div class="form-group">
+                    <div class="grid-item">
+                        <label for="customer-name">Name:</label>
+                        <input type="text" id="customer-name">
+                    </div>
+                    <div class="grid-item">
+                        <label for="customer-number">Contact Number:</label>
+                        <input type="tel" id="customer-number">
+                    </div>
+                    <div class="grid-item">
+                        <label for="customer-email">Email:</label>
+                        <input type="email" id="customer-email">
+                    </div>
+                </div>
+                <div class ="grid-item" style="max-width: 1000px;">
+                    <label for="customer-address">Address:</label>
+                    <textarea type="text" id="customer-address" class="wide-input"></textarea>
+                </div>
             </div>
         </div>
-        <a href ="../index.html" class ="btn" onclick="goBack()">Back to Home</button>
+        <a href="../index.html" id="back_button" class="btn">Home page</a>
     </div>
     <script src="../static/js/bookings.js"></script>
 </body>
