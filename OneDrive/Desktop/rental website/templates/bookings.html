@@ -89,21 +89,24 @@
     <div class="container">
         <h1>Booking Details</h1>
         <div class="grid-container">
-            <div class="grid-item">
-                <h2>Pickup Location</h2>
-                <p>Location: <span id="pickup-location"></span></p>
+            <div class="grid-item left-box">
+                <h2>Journey</h2>
+                <div class="journey">
+                    <p>Pickup Location: <span id="pickup-location"></span></p>
+                    <div class="arrow">➡️</div> <!-- Arrow representing the journey -->
+                    <p>Drop-off Location: <span id="dropoff-location"></span></p>
+                </div>
                 <p>Distance: <span id="distance-result"></span></p>
                 <p>Time: <span id="time-result"></span></p>
+            </div>
+            <div class="grid-item right-box">
+                <h2>Booking Information</h2>
                 <p>Selected Vehicle: <span id="selected-vehicle"></span></p>
                 <p>Price: <span id="estimated-price"></span></p>
-            </div>
-            <div class="grid-item">
-                <h2>Drop-off Location</h2>
-                <p>Location: <span id="dropoff-location"></span></p>
             </div>
         </div>
         <button onclick="goBack()">Back to Home</button>
     </div>
-    <script src="bookings.js" defer></script>
+    <script src="bookings.js"></script>
 </body>
 </html>
