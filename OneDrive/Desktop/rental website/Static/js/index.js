@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const days = Math.floor(totalMinutes / 1440);
             const hours = Math.floor((totalMinutes % 1440) / 60);
             const minutes = totalMinutes % 60;
-            timeResult.textContent = `Estimated Time: ${days} days : ${hours} hours : ${minutes} minutes`;
+            timeResult.textContent = `Time: ${days} days : ${hours} hours : ${minutes} minutes`;
 
             calculatePrice(); 
         } else {
@@ -182,7 +182,7 @@ function calculatePrice() {
     const pricePerHour = carPrices[selectedCar] || 0;
     const totalPrice = totalHours * pricePerHour;
 
-    document.getElementById('estimated-price').textContent = `Estimated Price: Rs ${totalPrice.toFixed(2)}`;
+    document.getElementById('estimated-price').textContent = `Price: Rs ${totalPrice.toFixed(2)}`;
 
     if (totalPrice > 0) {
         document.getElementById('book-now-btn').style.display = 'inline-block';
@@ -206,11 +206,12 @@ function calculatePrice() {
 
         // Get selected car details
         const selectedCar = document.querySelector('.car-option.selected h3');
-        const carPrice = selectedCar ? selectedCar.textContent.split(':')[1].trim() : "0";
+        const car = selectedCar ? selectedCar.textContent.split(':')[1].trim() : "0";
 
         // Get distance and time
         const distance = document.getElementById("distance-result").textContent;
         const time = document.getElementById("time-result").textContent;
+        const price  = document.getElementById("estimated-price").textContent;
 
         // Store values in the global variable
         formData = {
@@ -218,9 +219,10 @@ function calculatePrice() {
             dropoffLocation: dropoffLocation,
             pickupDate: pickupDate,
             pickupTime: pickupTime,
-            carPrice: carPrice,
+            car: car,
             distance: distance,
-            time: time
+            time: time,
+            price: price
         };
 
         // Save the form data in local storage
@@ -241,9 +243,10 @@ function calculatePrice() {
             document.getElementById("dropoff-location-span").textContent = storedFormData.dropoffLocation;
             document.getElementById("pickup-date-span").textContent = storedFormData.pickupDate;
             document.getElementById("pickup-time-span").textContent = storedFormData.pickupTime;
-            document.getElementById("car-price-span").textContent = `Rs ${storedFormData.carPrice}`;
+            document.getElementById("car-span").textContent = storedFormData.car;
             document.getElementById("distance-span").textContent = storedFormData.distance;
             document.getElementById("time-span").textContent = storedFormData.time;
+            document.getElementById("price-span").textContent = storedFormData.price;
         } else {
             // Handle case where there is no form data
             console.log("No booking data found.");
