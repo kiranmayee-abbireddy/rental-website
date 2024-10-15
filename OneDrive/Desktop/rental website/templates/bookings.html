@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookings Page</title>
+    <link rel="stylesheet" href="../static/css/styles.css"> <!-- Link your CSS file -->
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#home">Logo</a>
+        </div>
+        <div class="menu-option">
+            <span>☰</span>
+            <span class="menu-name">Menu</span> <!-- Added span for menu name -->
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#reservations">Reservations</a>
+                    <ul class="submenu">
+                        <li><a href="#book">Book</a></li>
+                        <li><a href="#checkin">Check-in</a></li>
+                        <li><a href="#view-modify-cancel">View/Modify/Cancel Reservation</a></li>
+                        <li><a href="#requirements">Requirements</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#locations">Locations</a>
+                    <ul class="submenu">
+                        <li><a href="#chennai">Chennai</a></li>
+                        <li><a href="#bangalore">Bangalore</a></li>
+                        <li><a href="#erode">Erode</a></li>
+                        <li><a href="#coimbatore">Coimbatore</a></li>
+                        <li><a href="#hyderabad">Hyderabad</a></li>
+                        <li><a href="#vijayawada">Vijayawada</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#vehicles">Vehicles</a>
+                    <ul class="submenu">
+                        <li><a href="#bikes">Bikes</a></li>
+                        <li><a href="#cars">Cars</a></li>
+                        <li><a href="#bus">Bus</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-center">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li>
+                    <a href="#reservations">Reservations</a>
+                    <ul class="submenu">
+                        <li><a href="#book">Book</a></li>
+                        <li><a href="#checkin">Check-in</a></li>
+                        <li><a href="#view-modify-cancel">View/Modify/Cancel Reservation</a></li>
+                        <li><a href="#requirements">Requirements</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#locations">Locations</a>
+                    <ul class="submenu">
+                        <li><a href="#chennai">Chennai</a></li>
+                        <li><a href="#bangalore">Bangalore</a></li>
+                        <li><a href="#erode">Erode</a></li>
+                        <li><a href="#coimbatore">Coimbatore</a></li>
+                        <li><a href="#hyderabad">Hyderabad</a></li>
+                        <li><a href="#vijayawada">Vijayawada</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#vehicles">Vehicles</a>
+                    <ul class="submenu">
+                        <li><a href="#bikes">Bikes</a></li>
+                        <li><a href="#cars">Cars</a></li>
+                        <li><a href="#bus">Bus</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="auth-button">
+            <a href="#login-signup" class="btn">Login / Sign Up</a>
+        </div>
+        <div class="language-option">
+            <span class="language-icon">🌐</span>
+            <a href="#language" class="language-text">Language</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Booking Details</h1>
+        <div class="grid-container">
+            <div class="grid-item">
+                <h2>Pickup Location</h2>
+                <p>Location: <span id="pickup-location"></span></p>
+                <p>Distance: <span id="distance-result"></span></p>
+                <p>Time: <span id="time-result"></span></p>
+                <p>Selected Vehicle: <span id="selected-vehicle"></span></p>
+                <p>Price: <span id="estimated-price"></span></p>
+            </div>
+            <div class="grid-item">
+                <h2>Drop-off Location</h2>
+                <p>Location: <span id="dropoff-location"></span></p>
+            </div>
+        </div>
+        <button onclick="goBack()">Back to Home</button>
+    </div>
+    <script src="bookings.js" defer></script>
+</body>
+</html>
