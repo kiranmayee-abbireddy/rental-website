@@ -435,6 +435,12 @@ footer {
 .error-message{
     text-align: right;
 }
+#distance-result, #time-result{
+    font-weight: bold !important;
+    margin-top: 10px !important;
+    text-align: left !important;
+    width: 100% !important;
+}
 
 
 /* Define the keyframes for the oscillation effect */
