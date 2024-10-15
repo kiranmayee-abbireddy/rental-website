@@ -441,6 +441,69 @@ footer {
     text-align: left !important;
     width: 100% !important;
 }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 20px;
+}
+
+.grid-item {
+    background-color: #f8f9fa; /* Light background for boxes */
+    border: 1px solid #ced4da; /* Border for boxes */
+    border-radius: 5px; /* Rounded corners */
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.left-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.right-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.journey {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align items */
+}
+
+.arrow {
+    font-size: 24px; /* Adjust size for the arrow */
+    margin: 10px 0; /* Space around the arrow */
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
 
 
 /* Define the keyframes for the oscillation effect */
