@@ -90,23 +90,45 @@
         <h1>Booking Details</h1>
         <div class="grid-container">
             <div class="grid-item left-box">
-                <h2>Journey</h2>
+                <h2>Journey Details</h2>
                 <div class="journey">
-                    <p>Pickup Location: <span id="pickup-location"></span></p>
-                    <div class="arrow">➡️</div> <!-- Arrow representing the journey -->
-                    <p>Drop-off Location: <span id="dropoff-location"></span></p>
+                    <div class="journey-info">
+                        <div class="location">
+                            <h3>Pick-up Location</h3>
+                            <p id="pickup-location"></p>
+                        </div>
+                        <div class="arrow">➡️</div>
+                        <div class="time">
+                            <h3>Drop-off Location</h3>
+                            <p id="dropoff-location"></p>
+                        </div>
+                    </div>
+                    <div class="journey-info">
+                        <div class="time">
+                            <h3>Pick-up Time</h3>
+                            <p id="pickup-time"></p>
+                        </div>
+                        <div class="location">
+                            <h3>Drop-off Time</h3>
+                            <p id="dropoff-time"></p>
+                        </div>
+                    </div>
                 </div>
                 <p>Distance: <span id="distance-result"></span></p>
                 <p>Time: <span id="time-result"></span></p>
-            </div>
-            <div class="grid-item right-box">
-                <h2>Booking Information</h2>
                 <p>Selected Vehicle: <span id="selected-vehicle"></span></p>
                 <p>Price: <span id="estimated-price"></span></p>
             </div>
+            <div class="grid-item right-box">
+                <h2>Customer Information</h2>
+                <p>Name: <span id="customer-name"></span></p>
+                <p>Contact Number: <span id="customer-number"></span></p>
+                <p>Email: <span id="customer-email"></span></p>
+                <p>Address: <span id="customer-address"></span></p>
+            </div>
         </div>
-        <button onclick="goBack()">Back to Home</button>
+        <a href ="../index.html" class ="btn" onclick="goBack()">Back to Home</button>
     </div>
-    <script src="bookings.js"></script>
+    <script src="../static/js/bookings.js"></script>
 </body>
 </html>
