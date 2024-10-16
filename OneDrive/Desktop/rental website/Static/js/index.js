@@ -191,65 +191,37 @@ function calculatePrice() {
     }
 }
 
-// Immediately Invoked Function Expression (IIFE)
-(function() {
-    // Declare a global variable to store form data
-    window.formData = {};
+document.querySelector("#book-now-btn").addEventListener("click", function(event) {
+    // Prevent the default anchor behavior
+    event.preventDefault();
 
-    // Event listener for the Book Now button
-    document.getElementById("book-now-btn")?.addEventListener("click", function() {
-        // Gather input values
-        const pickupLocation = document.getElementById("pickup-location").value;
-        const dropoffLocation = document.getElementById("dropoff-location").value;
-        const pickupDate = document.getElementById("pickup-date").value;
-        const pickupTime = document.getElementById("pickup-time").value;
+    // Gather input values
+    const pickupLocation = encodeURIComponent(document.getElementById("pickup-location").value);
+    const dropoffLocation = encodeURIComponent(document.getElementById("dropoff-location").value);
+    const pickupDate = encodeURIComponent(document.getElementById("pickup-date").value);
+    const pickupTime = encodeURIComponent(document.getElementById("pickup-time").value);
 
-        // Get selected car details
-        const selectedCar = document.querySelector('.car-option.selected h3');
-        const car = selectedCar ? selectedCar.textContent.split(':')[1].trim() : "0";
+    // Get selected car details
+    const selectedCar = document.querySelector('.car-option.selected h3');
+    const car = selectedCar ? encodeURIComponent(selectedCar.textContent.split(':')[1].trim()) : "No car selected";
 
-        // Get distance and time
-        const distance = document.getElementById("distance-result").textContent;
-        const time = document.getElementById("time-result").textContent;
-        const price  = document.getElementById("estimated-price").textContent;
+    // Get distance and time
+    const distance = encodeURIComponent(document.getElementById("distance-result").textContent) || "N/A";
+    const time = encodeURIComponent(document.getElementById("time-result").textContent) || "N/A";
+    const price = encodeURIComponent(document.getElementById("estimated-price").textContent) || "0";
 
-        // Store values in the global variable
-        formData = {
-            pickupLocation: pickupLocation,
-            dropoffLocation: dropoffLocation,
-            pickupDate: pickupDate,
-            pickupTime: pickupTime,
-            car: car,
-            distance: distance,
-            time: time,
-            price: price
-        };
-
-        // Save the form data in local storage
-        localStorage.setItem("formData", JSON.stringify(formData));
-
-        // Redirect to bookings.html
-        window.location.href = "../templates/bookings.html";
+    // Construct the query parameters
+    const params = new URLSearchParams({
+        pickupLocation,
+        dropoffLocation,
+        pickupDate,
+        pickupTime,
+        car,
+        distance,
+        time,
+        price
     });
 
-    // Retrieve form data from local storage when on bookings.html
-    if (window.location.pathname.endsWith("bookings.html")) {
-        const storedFormData = JSON.parse(localStorage.getItem("formData"));
-
-        // Check if formData exists
-        if (storedFormData) {
-            // Display the data in the corresponding spans
-            document.getElementById("pickup-location-span").textContent = storedFormData.pickupLocation;
-            document.getElementById("dropoff-location-span").textContent = storedFormData.dropoffLocation;
-            document.getElementById("pickup-date-span").textContent = storedFormData.pickupDate;
-            document.getElementById("pickup-time-span").textContent = storedFormData.pickupTime;
-            document.getElementById("car-span").textContent = storedFormData.car;
-            document.getElementById("distance-span").textContent = storedFormData.distance;
-            document.getElementById("time-span").textContent = storedFormData.time;
-            document.getElementById("price-span").textContent = storedFormData.price;
-        } else {
-            // Handle case where there is no form data
-            console.log("No booking data found.");
-        }
-    }
-})();
+    // Redirect to bookings.html with encoded query parameters
+    window.location.href = `../../templates/bookings.html?${params.toString()}`;
+});
