@@ -1,0 +1,117 @@
+@import url('styles.css');
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    margin-right: auto;
+}
+
+/* Grid Container */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 0px; /* Space between the boxes */
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+/* Left and Right Boxes */
+.grid-item {
+    background-color: rgba(172, 228, 228, 0.774);
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.66);
+}
+
+.journey {
+    display: flex;
+    flex-wrap: wrap; /* Allows the items to wrap */
+    align-items: center; /* Centers items vertically */
+    justify-content: space-between; /* Distributes space between items */
+    margin: 10px 0; /* Adds margin between journey sections */
+}
+
+/* Arrow Styling */
+.arrow {
+    font-size: 36px; /* Adjust arrow size */
+    margin: 0 15px; /* Adds space around the arrow */
+    font-weight: bold; /* Makes the arrow bolder */
+}
+
+/* Location and Time Styles */
+.journey-info {
+    display: flex;
+    flex-direction: row; /* Stacks items vertically */
+    align-items: flex-start; /* Aligns text to the left */
+}
+
+.location, .time {
+    margin-bottom: 5px; /* Adds space between items */
+}
+.customer-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns layout */
+    gap: 15px; /* Space between grid items */
+}
+
+/* Input Fields Styles */
+.customer-info input {
+    width: 100%; /* Makes input fields full-width */
+    padding: 8px; /* Adds padding inside the input */
+    border: 1px solid #ccc; /* Border styling */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background for inputs */
+}
+
+.wide-input {
+    grid-column: span 2; /* Makes the input span across two columns */
+    width: calc(100%); /* Adjust width to fill the space better */
+}
+/* Default layout for larger screens */
+.form-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Two columns for larger screens */
+    gap: 15px; /* Space between grid items */
+}
+
+/* Styles for screens up to 600px */
+@media screen and (max-width: 600px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Auto-fit to screen */
+        gap: 20px; /* Space between the boxes */
+        margin: 0 auto; /* Centering the grid */
+        padding: 10px; /* Add padding around the grid */
+        box-sizing: border-box; /* Ensure padding and borders are included in the width */
+    }
+
+    .grid-item {
+        background-color: rgba(255, 255, 255, 0.587)!important;
+    }
+
+    .journey {
+        display: flex; /* Ensure this is a flex container */
+        flex-direction: column; /* Stacks items vertically on smaller screens */
+        align-items: flex-start; /* Aligns items to the left */
+    }
+
+    .form-group {
+        display: grid; /* Ensure form-group is a grid container */
+        grid-template-columns: 1fr; /* Switch to a single column */
+    }
+}
+
+/* Styles for screens up to 992px */
+@media screen and (max-width: 992px) {
+    .grid-item {
+        background-color: rgba(172, 203, 228, 0.774);
+    }
+
+    .form-group {
+        display: grid; /* Ensure form-group is a grid container */
+        grid-template-columns: 1fr; /* Switch to a single column */
+    }
+}
+
+
