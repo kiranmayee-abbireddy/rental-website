@@ -74,6 +74,10 @@
     grid-template-columns: 1fr 1fr 1fr; /* Two columns for larger screens */
     gap: 15px; /* Space between grid items */
 }
+.btn {
+    text-align: center;
+    justify-self: left;
+}
 
 /* Styles for screens up to 600px */
 @media screen and (max-width: 600px) {
@@ -82,7 +86,7 @@
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Auto-fit to screen */
         gap: 20px; /* Space between the boxes */
         margin: 0 auto; /* Centering the grid */
-        padding: 10px; /* Add padding around the grid */
+        padding: 30px; /* Add padding around the grid */
         box-sizing: border-box; /* Ensure padding and borders are included in the width */
     }
 
@@ -100,6 +104,13 @@
         display: grid; /* Ensure form-group is a grid container */
         grid-template-columns: 1fr; /* Switch to a single column */
     }
+    .grid-item input {
+        width: 100%; /* Ensures inputs take full width */
+        padding: 3px; /* Increase padding for better touch targets */
+        font-size: 16px; /* Increase font size for readability */
+        border-radius: 0px;
+        border-color: rgba(0, 0, 0, 0.174);
+    }
 }
 
 /* Styles for screens up to 992px */
@@ -111,6 +122,17 @@
     .form-group {
         display: grid; /* Ensure form-group is a grid container */
         grid-template-columns: 1fr; /* Switch to a single column */
+    }
+    .grid-item input {
+        width: 100%; /* Ensures inputs take full width */
+        padding: 3px; /* Increase padding for better touch targets */
+        font-size: 16px; /* Increase font size for readability */
+        border-radius: 0px;
+        border-color: black;
+    }
+    .btn {
+        text-align: center;
+        justify-self: center;
     }
 }
 
