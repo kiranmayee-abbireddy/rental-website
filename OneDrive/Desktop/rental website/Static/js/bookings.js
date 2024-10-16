@@ -1,40 +1,31 @@
-// bookings.js
-
 // Function to get URL parameters
-function getQueryParams() {
-    const params = {};
-    const queryString = window.location.search.substring(1);
-    const regex = /([^&=]+)=([^&]*)/g;
-    let match;
+function getUrlParams() {
+    const params = new URLSearchParams(window.location.search);
+    return {
+        pickupLocation: decodeURIComponent(params.get('pickupLocation')),
+        dropoffLocation: decodeURIComponent(params.get('dropoffLocation')),
+        pickupDate: decodeURIComponent(params.get('pickupDate')),
+        pickupTime: decodeURIComponent(params.get('pickupTime')),
+        car: decodeURIComponent(params.get('car')),
+        distance: decodeURIComponent(params.get('distance')),
+        time: decodeURIComponent(params.get('time')),
+        price: decodeURIComponent(params.get('price'))
+    };
+}
+
+// Display booking details
+function displayBookingDetails() {
+    const bookingDetails = getUrlParams();
     
-    while (match = regex.exec(queryString)) {
-        params[decodeURIComponent(match[1])] = decodeURIComponent(match[2]);
-    }
-    return params;
+    document.getElementById('pickup-location-span').textContent = bookingDetails.pickupLocation || 'N/A';
+    document.getElementById('dropoff-location-span').textContent = bookingDetails.dropoffLocation || 'N/A';
+    document.getElementById('pickup-date-span').textContent = bookingDetails.pickupDate || 'N/A';
+    document.getElementById('pickup-time-span').textContent = bookingDetails.pickupTime || 'N/A';
+    document.getElementById('car-span').textContent = bookingDetails.car || 'N/A';
+    document.getElementById('distance-span').textContent = bookingDetails.distance || 'N/A';
+    document.getElementById('time-span').textContent = bookingDetails.time || 'N/A';
+    document.getElementById('price-span').textContent = bookingDetails.price || 'N/A';
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Retrieve data from URL parameters
-    const params = getQueryParams();
-
-    // Set journey details
-    document.getElementById('pickup-location').textContent = params.pickupLocation || 'Not provided';
-    document.getElementById('dropoff-location').textContent = params.dropoffLocation || 'Not provided';
-    document.getElementById('pickup-time').textContent = params.pickupTime || 'Not provided';
-    document.getElementById('dropoff-time').textContent = params.dropoffTime || 'Not provided';
-    document.getElementById('distance-result').textContent = params.distance || 'Not calculated';
-    document.getElementById('time-result').textContent = params.time || 'Not calculated';
-    document.getElementById('selected-vehicle').textContent = params.selectedVehicle || 'Not selected';
-    document.getElementById('estimated-price').textContent = params.price || 'Rs 0';
-
-    // Set customer information
-    document.getElementById('customer-name').textContent = params.name || 'Not provided';
-    document.getElementById('customer-number').textContent = params.number || 'Not provided';
-    document.getElementById('customer-email').textContent = params.email || 'Not provided';
-    document.getElementById('customer-address').textContent = params.address || 'Not provided';
-});
-
-// Back button function
-function goBack() {
-    window.history.back();
-}
+// Call the function on page load
+document.addEventListener('DOMContentLoaded', displayBookingDetails);
