@@ -31,13 +31,23 @@ function displayBookingDetails() {
 document.addEventListener('DOMContentLoaded', displayBookingDetails);
 
 document.addEventListener("DOMContentLoaded", function() {
-    const nameInput = document.getElementById("customer-name");
-
-    nameInput.addEventListener("keydown", function(event) {
+    // Array of input IDs to validate
+    const inputIds = ["customer-name", "customer-middlename", "customer-lastname"];
+    
+    // Function to handle keydown events
+    function validateInput(event) {
         const key = event.key;
+        
+        // Regular expression to allow only letters and spaces
         if (!/^[A-Za-z\s]$/.test(key) && key !== "Backspace" && key !== "Delete") {
             event.preventDefault();
         }
+    }
+
+    // Loop through each input ID and add the event listener
+    inputIds.forEach(id => {
+        const inputElement = document.getElementById(id);
+        inputElement.addEventListener("keydown", validateInput);
     });
 });
 
@@ -84,13 +94,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const nameInput = document.getElementById('customer-name');
     const numberInput = document.getElementById('customer-number');
     const emailInput = document.getElementById('customer-email');
+    const ageInput = document.getElementById('customer-age')
 
     function checkInputs() {
         const nameFilled = nameInput.value.trim() !== '';
         const numberFilled = numberInput.value.trim() !== '';
         const emailFilled = emailInput.value.trim() !== '';
+        const ageFilled = ageInput.value.trim() !== '';
 
-        if (nameFilled && numberFilled && emailFilled) {
+        if (nameFilled && numberFilled && emailFilled && ageFilled) {
             payButton.disabled = false;  // Enable the button
         } else {
             payButton.disabled = true;   // Disable the button
@@ -98,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Add event listeners to each input field
-    [nameInput, numberInput, emailInput].forEach(input => {
+    [nameInput, numberInput, emailInput, ageInput].forEach(input => {
         input.addEventListener('input', checkInputs);
     });
 });
