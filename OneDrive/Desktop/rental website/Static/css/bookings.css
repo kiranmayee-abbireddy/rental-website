@@ -129,7 +129,7 @@
 
     .form-group {
         display: grid; /* Ensure form-group is a grid container */
-        grid-template-columns: 1fr; /* Switch to a single column */
+        grid-template-columns: 1fr !important; /* Switch to a single column */
     }
     .grid-item input {
         width: 100%; /* Ensures inputs take full width */
@@ -148,7 +148,7 @@
 
     .form-group {
         display: grid; /* Ensure form-group is a grid container */
-        grid-template-columns: 1fr; /* Switch to a single column */
+        grid-template-columns: 1fr 1fr; 
     }
     .grid-item input {
         width: 100%; /* Ensures inputs take full width */
