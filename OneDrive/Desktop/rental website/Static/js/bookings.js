@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener('DOMContentLoaded', function() {
     const numberInput = document.getElementById("customer-number");
     const errorMessage = document.getElementById("mobilenumber-error");
-    const submitButton = document.getElementById('submit');
+    const submitButton = document.getElementById('pay-button');
 
     // Initialize intl-tel-input plugin
     const iti = window.intlTelInput(numberInput, {
@@ -103,6 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 });
+
 document.addEventListener('DOMContentLoaded', function () {
     const payButton = document.getElementById('pay-button');
     const nameInput = document.getElementById('customer-name');
