@@ -141,8 +141,18 @@ document.getElementById('pay-button').onclick = function(e) {
     const name = document.getElementById('customer-name').value;
     const contact = document.getElementById('customer-number').value;
     const email = document.getElementById('customer-email').value;
-    const amountInRupees = document.getElementById('price-span').value;
-    const amountInPaise = amountInRupees * 100; // Convert amount to paise
+    const priceText = document.getElementById('price-span').textContent;
+    const priceString = priceText.replace('Price: Rs ', '').trim(); // Extract the numeric part
+    const amountInRupees = parseFloat(priceString); // Convert to float
+
+    // Validate the amount
+    if (isNaN(amountInRupees) || amountInRupees <= 0) {
+        alert("Invalid amount. Please check your booking details.");
+        return; // Exit if amount is not valid
+    }
+
+    const amountInPaise = Math.round(amountInRupees * 100); // Convert to paise
+    console.log("Amount in Paise:", amountInPaise); // Debugging log
 
     var options = {
         "key": "rzp_test_PMMLte4CIjePoq", 
