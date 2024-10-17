@@ -114,3 +114,46 @@ document.addEventListener('DOMContentLoaded', function () {
         input.addEventListener('input', checkInputs);
     });
 });
+document.getElementById('pay-button').onclick = function(e) {
+    e.preventDefault();
+
+    // Collect billing information
+    const name = document.getElementById('customer-name').value;
+    const contact = document.getElementById('customer-number').value;
+    const email = document.getElementById('customer-email').value;
+    const amountInRupees = document.getElementById('price-span').value;
+    const amountInPaise = amountInRupees * 100; // Convert amount to paise
+
+    var options = {
+        "key": "rzp_test_PMMLte4CIjePoq", 
+        "amount": amountInPaise, // Amount in paise
+        "currency": "INR",
+        "name": name, // Displayed in the Razorpay checkout
+        "description": "Payment for Car Rental",
+        "image": "https://media.istockphoto.com/id/1290071290/vector/rental-car-icon.jpg?s=612x612&w=0&k=20&c=q4EsvU3jJJYbcZTJ1EzKh6c-Dvy39HagvAUgTCRK9bE=", // Replace with your logo URL
+        "handler": function (response) {
+            // After payment, you can log the response
+            alert("Payment successful!");
+            alert("Payment ID: " + response.razorpay_payment_id);
+            alert("Order ID: " + response.razorpay_order_id);
+            alert("Signature: " + response.razorpay_signature);
+
+            // Optionally, send billing information to your backend or save it
+            console.log({
+                name: name,
+                contact: contact,
+                email: email,
+                amount: amountInRupees,
+                paymentId: response.razorpay_payment_id
+            });
+        },
+        "theme": {
+            "color": "#F37254"
+        }
+    };
+
+    // Open the Razorpay payment dialog
+    var rzp1 = new Razorpay(options);
+    rzp1.open();
+    e.preventDefault();
+};
