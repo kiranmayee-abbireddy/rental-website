@@ -7,6 +7,10 @@
     font-family: Arial, sans-serif;
     margin-right: auto;
 }
+.btn-home{
+    color:rgba(253, 253, 253, 0.795);
+    text-decoration: none;
+}
 
 /* Grid Container */
 .grid-container {
@@ -78,6 +82,29 @@
     text-align: center;
     justify-self: left;
 }
+
+#pay-button:disabled {
+    background-color: grey;
+    color: white;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+#pay-button {
+    background-color: white;
+    color: teal;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#pay-button:hover {
+    background-color: teal; 
+    color:white;
+}
+
 
 /* Styles for screens up to 600px */
 @media screen and (max-width: 600px) {
