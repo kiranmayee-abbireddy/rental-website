@@ -51,43 +51,57 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded', function() {
     const numberInput = document.getElementById("customer-number");
     const errorMessage = document.getElementById("mobilenumber-error");
+    const submitButton = document.getElementById('submit');
 
-    numberInput.addEventListener("keydown", function(event){
-        const key = event.key;
-        if (!/^\d$/.test(key) && key !== "Backspace" && key !== "Delete" && key !== "ArrowLeft" && key !== "ArrowRight" && key !== "Tab") {
-            event.preventDefault();
-        }
-
-        if (numberInput.value.length >= 10 && key !== "Backspace" && key !== "Delete" && key !== "ArrowLeft" && key !== "ArrowRight" && key !== "Tab") {
-            event.preventDefault();
-        }
+    // Initialize intl-tel-input plugin
+    const iti = window.intlTelInput(numberInput, {
+      initialCountry: "in", // Automatically detect country
+      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
     });
 
+    // Validate on keypress to ensure only digits
+    numberInput.addEventListener("keydown", function(event) {
+      const key = event.key;
+      if (!/^\d$/.test(key) && key !== "Backspace" && key !== "Delete" &&
+          key !== "ArrowLeft" && key !== "ArrowRight" && key !== "Tab") {
+        event.preventDefault();
+      }
+
+      // Prevent entering more than 10 digits
+      if (numberInput.value.length >= 10 && key !== "Backspace" &&
+          key !== "Delete" && key !== "ArrowLeft" && key !== "ArrowRight" && key !== "Tab") {
+        event.preventDefault();
+      }
+    });
+
+    // Validate on blur to ensure correct length
     numberInput.addEventListener("blur", function() {
-        const value = numberInput.value;
-        if (value.length < 10) {
-            errorMessage.textContent = "Please enter 10 digits.";
-            errorMessage.style.display = "block";
-        } else {
-            errorMessage.textContent = ""; 
-            errorMessage.style.display = "none"; 
-        }
+      const value = numberInput.value;
+      if (value.length < 10) {
+        errorMessage.textContent = "Please enter 10 digits.";
+        errorMessage.style.display = "block";
+      } else {
+        errorMessage.textContent = "";
+        errorMessage.style.display = "none";
+      }
     });
 
-    function getFullNumber() {
-        const countryCode = "+91"; 
-        return countryCode + numberInput.value; 
-    }
-    
-    document.addEventListener('DOMContentLoaded', function() {
-        document.getElementById('submit').addEventListener('click', function() {
-            const fullNumber = getFullNumber();
-            console.log("Full Number: ", fullNumber);
-        });
-    });    
+    // Handle form submission
+    submitButton.addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent form submission for demo purposes
+
+      // Get full number including the country code from the plugin
+      if (iti.isValidNumber()) {
+        const fullNumber = iti.getNumber(); // Get the full international number
+        console.log("Full Number: ", fullNumber);
+      } else {
+        errorMessage.textContent = "Please enter a valid mobile number.";
+        errorMessage.style.display = "block";
+      }
+    });
 });
 document.addEventListener('DOMContentLoaded', function () {
     const payButton = document.getElementById('pay-button');
