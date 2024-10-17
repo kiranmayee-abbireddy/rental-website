@@ -111,9 +111,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const emailInput = document.getElementById('customer-email');
     const ageInput = document.getElementById('customer-age')
 
+    const iti = window.intlTelInput(numberInput, {
+        initialCountry: "in", // Automatically detect country
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+
     function checkInputs() {
         const nameFilled = nameInput.value.trim() !== '';
-        const numberFilled = numberInput.value.trim() !== '';
+        const numberFilled = iti.isValidNumber();
         const emailFilled = emailInput.value.trim() !== '';
         const ageFilled = ageInput.value.trim() !== '';
 
