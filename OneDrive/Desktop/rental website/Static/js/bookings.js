@@ -29,3 +29,28 @@ function displayBookingDetails() {
 
 // Call the function on page load
 document.addEventListener('DOMContentLoaded', displayBookingDetails);
+
+document.addEventListener('DOMContentLoaded', function () {
+    const payButton = document.getElementById('pay-button');
+    const nameInput = document.getElementById('customer-name');
+    const numberInput = document.getElementById('customer-number');
+    const emailInput = document.getElementById('customer-email');
+
+    function checkInputs() {
+        const nameFilled = nameInput.value.trim() !== '';
+        const numberFilled = numberInput.value.trim() !== '';
+        const emailFilled = emailInput.value.trim() !== '';
+
+        if (nameFilled && numberFilled && emailFilled) {
+            payButton.disabled = false;  // Enable the button
+            payButton.enabled =true;
+        } else {
+            payButton.disabled = true;   // Disable the button
+        }
+    }
+
+    // Add event listeners to each input field
+    [nameInput, numberInput, emailInput].forEach(input => {
+        input.addEventListener('input', checkInputs);
+    });
+});
