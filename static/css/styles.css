@@ -1,0 +1,946 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://images.pexels.com/photos/14992303/pexels-photo-14992303/free-photo-of-photo-of-a-car-speedometer-a-rev-counter-and-a-odometer.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+}
+
+.welcome-message {
+    text-align: center;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.features, .contact {
+    margin-bottom: 10px;
+    color: white;
+}
+
+h2 {
+    margin-bottom: 5px;
+    color: white;
+    text-align: center;
+}
+
+header {
+    background-color: #008080;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 0; /* Vertical padding */
+    background: #008080;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #008080;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.logo a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-center {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    position: relative;
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0 10px;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+    background-color: white;
+    color: #008080;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    list-style-type: none;
+    padding: 5px;
+    margin: 0;
+    border-radius: 5px;
+}
+
+.nav-links li:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    margin: 5px 0;
+}
+
+.submenu a {
+    padding: 5px 10px;
+    color: #008080;
+    display: block;
+}
+
+.submenu a:hover {
+    background-color: #008080;
+    color: white;
+}
+
+.auth-button {
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.btn {
+    background-color: #ffffff;
+    color: #008080;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+    background-color: #008080;
+    color: white;
+}
+
+.menu {
+    display: none;
+    border-radius: 5px;
+}
+
+.menu-option {
+    position: relative;
+    margin-right: 20px;
+    display: none;
+}
+
+.menu-option span {
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+}
+
+.menu-option {
+    position: relative;
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    padding: 10px;
+    list-style: none;
+    z-index: 200;
+}
+
+.menu-option:hover .menu {
+    display: block;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    padding: 5px;
+    list-style: none;
+    margin: 0;
+    z-index: 200;
+}
+
+.menu-option li:hover .submenu {
+    display: block;
+}
+
+.menu a,
+.submenu a {
+    color: #008080;
+    text-decoration: none;
+    padding: 5px 10px;
+    display: block;
+}
+
+.menu a:hover,
+.submenu a:hover {
+    background-color: #008080;
+    color: white;
+}
+
+
+.menu-option:hover + .nav-links,
+.nav-links:hover {
+    display: flex;
+}
+
+.language-option {
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-right: 100px;
+}
+
+
+.language-icon {
+    margin-right: 5px;
+}
+
+.language-text {
+    color: white;
+    text-decoration: none;
+}
+
+.rental-form {
+    padding: 20px;
+    background-color: rgba(0, 128, 128, 0.8);
+    border-radius: 10px;
+    color: white;
+    max-width: 600px;
+    margin: 40px auto;
+    margin-bottom: 60px;
+}
+
+.rental-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    flex: 1;
+}
+
+.form-group input,
+.form-group select, 
+.form-group textarea {
+    flex: 2;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: white;
+    color: black;
+}
+
+
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: teal;
+    outline: none;
+}
+.mobile-input {
+    display: flex; /* Use flexbox for side-by-side layout */
+    align-items: center; /* Center items vertically */
+}
+
+.country-code {
+    background-color: #0f6d6af5; /* Light background for country code */
+    padding: 10px; /* Padding around the country code */
+    border: 1px solid #ccc; /* Border around the country code */
+    border-right: none; /* Remove right border */
+    border-radius: 5px 0 0 5px; /* Rounded corners for the left side */
+    width: 40px; /* Fixed width for the country code */
+    text-align: center; /* Center the country code text */
+    flex-shrink: 0; /* Prevent country code from shrinking */
+    color:white;
+}
+
+.mobile-input input[type="tel"] {
+    flex: 1; /* Make the input field take the remaining space */
+    min-width: 0; /* Allows the input field to shrink below the default size */
+    padding: 10px; /* Padding inside the input field */
+    border: 1px solid #ccc; /* Border around the input field */
+    border-radius: 0 5px 5px 0; /* Rounded corners for the right side */
+}
+
+.mobile-input {
+    width: 100%; /* Make the container full width */
+    max-width: 408px; /* Optional: limit max width */
+}
+
+
+.btn.view-vehicles {
+    background-color: white;
+    color: teal;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn.view-vehicles:hover {
+    background-color: teal;
+    color :white;
+}
+.car-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 images per row */
+    gap: 10px; /* Space between images */
+    margin: 20px; /* Adjust as needed */
+}
+
+.car-gallery img {
+    width: 100%; /* Make images responsive */
+    height: 200px; /* Set a fixed height */
+    object-fit: cover; /* Maintain aspect ratio while covering the area */
+    border-radius: 10px; /* Optional: rounded corners */
+}
+.discounts {
+    background-color: rgba(16, 17, 17, 0.8);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: relative; /* Positioning context for the heading */
+}
+
+.discounts h2 {
+    position: sticky; 
+    top: 0; 
+    z-index: 1; /* Ensure it appears above the discount items */
+    padding: 10px 0;
+}
+
+.discount-container {
+    display: flex; 
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center items */
+    gap: 20px;
+    padding: 10px; 
+}
+
+.discount-item {
+    background-color: #008080;
+    border-radius: 10px;
+    padding: 30px;
+    flex: 1 1 80px; 
+    max-width: 200px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.discount-item:hover {
+    transform: scale(1.05);
+}
+#car-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.car-option {
+    flex: 1 1 30%;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    color: teal; /* Teal text color */
+    background-color: white; /* Ensure white background for each option */
+    transition: border 0.3s, transform 0.3s; /* Transition for border and scale */
+    overflow: hidden; /* Prevent overflow of child elements */
+}
+
+/* Image styles */
+.car-option img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.5s ease-in-out; /* Smooth transition */
+}
+
+.car-option img:hover {
+    animation: oscillate 3s infinite; /* Infinite oscillating animation */
+}
+
+/* Label styles */
+.car-option label {
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+    transition: border 0.3s, transform 0.3s; /* Added border and scale transitions */
+}
+
+/* Styles for checked radio button */
+.car-option input[type="radio"]:checked + label {
+    background-color: white; /* Keep the label background white */
+    border: 2px solid teal; /* Border for the selected option */
+    transform: scale(1.05); /* Slightly enlarge the selected option */
+    border-radius: 10px;
+}
+
+.btn{
+    background-color: white;
+    color: teal;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+.btn:hover {
+    background-color: teal;
+    color :white;
+}
+.error-message{
+    text-align: right;
+}
+#distance-result, #time-result{
+    font-weight: bold !important;
+    margin-top: 10px !important;
+    text-align: left !important;
+    width: 100% !important;
+}
+
+/* Define the keyframes for the oscillation effect */
+@keyframes oscillate {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(20px); } /* Move to the right */
+    100% { transform: translateX(0); } /* Back to the original position */
+}
+
+
+@media screen and (max-width: 992px) {
+    body {
+        background-color: #f0f0f0;
+        background-image: url('https://images.pexels.com/photos/3221163/pexels-photo-3221163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    }
+
+    header {
+        background-color: rgba(48, 162, 228, 0.495);
+        color: #e8f1f4;
+        padding-bottom: 5px;
+    }
+
+    footer {
+        background-color: #1a98db;
+        color: white;
+    }
+    .menu-option {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background-color: #008080;
+        z-index: 10;
+    }
+
+    .logo {
+        position: absolute;
+        left: 45%;
+        transform: translateX(-50%);
+    }
+
+    .nav-links li {
+        margin: 0;
+    }
+
+    .nav-links li:hover .submenu {
+        display: block;
+    }
+
+    .navbar {
+        background-color: #1a98db;
+    }
+    
+    .nav-links a {
+        color: white;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus {
+        background-color: #1a98db;
+        color: white;
+    }
+
+    .submenu {
+        background-color: white;
+        left: 105%; /* Position it to the right of the parent menu item */
+        top: 20px; /* Align with the top of the parent menu item */
+        z-index: 200;
+        border-radius: 5px;
+    }
+
+    .submenu a {
+        color: #1a98db;
+    }
+
+    .submenu a:hover {
+        background-color: #1a98db;
+        color: white;
+    }
+
+    .btn {
+        background-color: white;
+        color: #1a98db;
+    }
+
+    .btn:hover {
+        background-color: #1a98db;
+    }
+    .language-option {
+        margin-right: 50px;
+    }
+    .car-option input[type="radio"]:checked + label {
+        border-color: #1a98db; /* Highlight color */
+    }
+    .rental-form {
+        background-color: rgba(16, 98, 122, 0.8);
+        color: white;
+    }
+
+    .form-group input,
+    .form-group select, 
+    .form-group textarea {
+        border-color: #ccc;
+        background-color: white; /* Fixed missing semicolon */
+        color: black;}
+    .btn.view-vehicles {
+        background-color:white;
+        color:#1a98db;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+    
+    .btn.view-vehicles:hover {
+        background-color: #1a98db; /* Darker teal on hover */
+        color : white;
+    }
+    .menu a,
+    .submenu a {
+    color: #1a98db; /* Link color */
+    text-decoration: none; /* Remove underline */
+    padding: 5px 10px;
+    display: block; /* Make links fill the full width */
+    }
+
+    .menu a:hover,
+    .submenu a:hover {
+    background-color: #1a98db; /* Change background on hover */
+    color: white; /* Change text color on hover */
+    border-radius : 20px;
+
+    }
+    .car-option{
+        color:#1a98db;
+    }
+    .car-gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+    }
+    .discount-item {
+        background-color: #1a98db;
+    }
+    .discounts {
+        background-color: rgba(16, 97, 122, 0.521);
+    }
+    .discount-item {
+        border-radius: 10px;
+        padding: 15px;
+        flex: 0 0 auto; /* Prevent items from shrinking */
+        width: 200px; /* Set a fixed width for each item */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s;
+    }
+    .mobile-input {
+        width: 100%; /* Make the container full width */
+        max-width: 408px; /* Optional: limit max width */
+    }
+    .country-code {
+        background-color: #177ba9f5; /* Light background for country code */
+        padding: 10px; /* Padding around the country code */
+        border: 1px solid #ccc; /* Border around the country code */
+        border-right: none; /* Remove right border */
+        border-radius: 5px 0 0 5px; /* Rounded corners for the left side */
+        width: 40px; /* Fixed width for the country code */
+        text-align: center; /* Center the country code text */
+        flex-shrink: 0; /* Prevent country code from shrinking */
+        color:white;
+    }
+    
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        background-color: #f0f0f0; /* Optional: Set a background color */
+        background-image: url('https://images.pexels.com/photos/19300320/pexels-photo-19300320/free-photo-of-red-audi-rs-6-car.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    }
+
+    header {
+        background-color: rgba(90, 5, 5, 0.495); /* Header background color */
+        color: #e8f1f4; /* Header text color */
+        padding-bottom: 5px ;
+    }
+
+    footer {
+        background-color: #5a0505; /* Footer background color */
+        color: white; /* Footer text color */
+    }
+
+    .navbar {
+        background-color: #5a0505; /* Navbar background color */
+    }
+
+    .nav-links a {
+        color: white; /* Link color */
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus {
+        background-color: #5a0505; /* Highlight on hover */
+        color: white; /* Text color on hover */
+    }
+
+    .submenu {
+        background-color: white; /* Submenu background color */
+        left: 101%; /* Position it to the right of the parent menu item */
+        top: 20px; /* Align with the top of the parent menu item */
+        z-index: 200;
+        border-radius: 5px;
+        margin :3px;
+    }
+
+    .submenu a {
+        color: white; /* Submenu link color */
+    }
+
+    .submenu a:hover {
+        background-color: #5a0505; /* Change submenu background on hover */
+        color: white; /* Submenu text color on hover */
+    }
+
+    .btn {
+        background-color: white; /* Button background color */
+        color: #5a0505; /* Button text color */
+    }
+
+    .btn:hover {
+        background-color: #5a0505; /* Darker shade on button hover */
+    }
+    .car-option input[type="radio"]:checked + label {
+        border-color: #5a0505; /* Highlight color */
+    }
+    /* Rental Form styles */
+    .rental-form {
+        background-color: rgba(90, 5, 5, 0.8); /* Semi-transparent background */
+        color: white; /* Form text color */
+        margin : 5px ;
+        margin-bottom: 60px;
+    }
+
+    .form-group input,
+    .form-group select, 
+    .form-group textarea {
+        border-color: #ccc; /* Input border color */
+        background-color: white;/* Transparent background */
+        color: black; /* Input text color */
+    }
+    .form-group input:focus,
+    .form-group select:focus {
+        border-color: #5a0505; /* Border color on focus */
+        outline: none; /* Remove outline */
+    }
+
+    .mobile-input {
+        flex-direction: row; /* Stack on smaller screens */
+        align-items: center; /* Full width for mobile number input */
+    }
+    .car-option{
+        color:#5a0505;
+        font-size: 12px;
+    }
+    .country-code {
+        width: 10%; /* Full width for country code on small screens */
+        border-radius: 5px; /* Rounded corners for the top */
+    }
+    .country-code {
+        background-color: #6e0707f5; /* Light background for country code */
+        padding: 10px; /* Padding around the country code */
+        border: 1px solid #ccc; /* Border around the country code */
+        border-right: none; /* Remove right border */
+        border-radius: 5px 0 0 5px; /* Rounded corners for the left side */
+        width: 40px; /* Fixed width for the country code */
+        text-align: center; /* Center the country code text */
+        flex-shrink: 0; /* Prevent country code from shrinking */
+        color:white;
+    }
+
+    .mobile-input input[type="tel"] {
+        border-radius: 5px; /* Rounded corners for the bottom */
+        width: 80%;
+    }
+    .mobile-input {
+        width: 100%; /* Make the container full width */
+        max-width: 260px; /* Optional: limit max width */
+    }
+    
+    .btn.view-vehicles {
+        background-color:white;
+        color:#5a0505;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+    
+    .btn.view-vehicles:hover {
+        background-color: #5a0505; /* Darker teal on hover */
+        color : white;
+    }
+    .auth-button {
+        display: none;
+    }
+    .menu a,
+    .submenu a {
+    color: #5a0505; /* Link color */
+    text-decoration: none; /* Remove underline */
+    padding: 5px 10px;
+    display: block; /* Make links fill the full width */
+    }
+
+    .menu a:hover,
+    .submenu a:hover {
+    background-color: #5a0505; /* Change background on hover */
+    color: white; /* Change text color on hover */
+    border-radius : 20px;
+    }
+    .car-gallery {
+        grid-template-columns: 1fr; /* 1 image per row */
+    }
+    .discount-item {
+        background-color: #5a0505;
+    }
+    .discounts {
+        background-color: rgba(9, 9, 9, 0.582);
+    }
+    .discount-item {
+        border-radius: 10px;
+        padding: 15px;
+        flex: 0 0 auto; /* Prevent items from shrinking */
+        width: 200px; /* Set a fixed width for each item */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s;
+    }
+    .car-option {
+        flex: 1 1 30%;
+    }
+    
+    @keyframes oscillate {
+        0% { transform: translateX(0); }
+        50% { transform: translateX(10px); } /* Move to the right */
+        100% { transform: translateX(0); } /* Back to the original position */
+    }
+}
+@media screen and (max-width :380px){
+    .mobile-input {
+        width: 100%; /* Make the container full width */
+        max-width: 225px; /* Optional: limit max width */
+    }
+    .car-option {
+        flex: 1 1 60%;
+    }
+}
+@media screen and (max-width: 320px) {
+    .logo {
+        display: none;
+    }
+    .menu{
+        font-size: 15px;
+    }
+    .submenu {
+        max-width: 115%; /* Allow more width for small screens */
+        left: 0; /* Align with the left side */
+        white-space: normal; /* Ensure text can wrap */
+        overflow: visible; /* Ensure all text is visible */
+        margin-left: 3px;
+    }
+    .submenu a {
+        font-size: 15px; /* Further decrease font size for very small screens */
+    }
+    .mobile-input {
+        width: 100%; /* Make the container full width */
+        max-width: 190px; /* Optional: limit max width */
+    }
+    .country-code {
+        background-color: #6e0707f5; /* Light background for country code */
+        padding: 10px; /* Padding around the country code */
+        border: 1px solid #ccc; /* Border around the country code */
+        border-right: none; /* Remove right border */
+        border-radius: 5px 0 0 5px; /* Rounded corners for the left side */
+        width: 40px; /* Fixed width for the country code */
+        text-align: center; /* Center the country code text */
+        flex-shrink: 0; /* Prevent country code from shrinking */
+        color:white;
+    }
+    @keyframes oscillate {
+        0% { transform: translateX(0); }
+        50% { transform: translateX(12px); } /* Move to the right */
+        100% { transform: translateX(0); } /* Back to the original position */
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    body {
+        font-size: 1.5em; /* Adjust base font size as needed */
+    }
+
+    .welcome-message,
+    .features,
+    .contact,
+    h2,
+    label,
+    .nav-links a,
+    .btn,
+    .btn.view-vehicles {
+        font-size: 1.5em; /* Increase size for specific elements */
+    }
+
+    h1{
+        font-size: 3em;
+    }
+    /* Adjust other elements as needed */
+    .rental-form h2 {
+        font-size: 1.2em; /* Larger heading size */
+    }
+
+    /* Example for form elements */
+    .form-group input,
+    .form-group select, 
+    .form-group textarea {
+        font-size: 1.5em; /* Larger input text size */
+    }
+    header {
+        background-color: #0080804a; /* Updated background color */
+        color: white;
+        padding: 100px ; /* Increased padding for more height */
+        text-align: center;
+    }
+    
+    footer {
+        text-align: center; /* Center-align text */
+        padding: 20px 0; /* Increased vertical padding */
+        background: #008080; /* Footer background color */
+        color: white; /* Text color */
+        position: fixed; /* Fixes the footer */
+        bottom: 0; /* Sticks it to the bottom */
+        left: 0; /* Aligns it to the left */
+        width: 100%; /* Full width of the viewport */
+    }
+    
+    .rental-form {
+        padding: 40px; /* Increased padding for more area */
+        background-color: rgba(0, 128, 128, 0.8); /* Semi-transparent background */
+        border-radius: 30px;
+        color: white;
+        max-width: 1500px;
+        margin: 100px auto; /* Adjusted margin for better positioning */
+        margin-bottom: 200px; /* Increased bottom margin */
+    }
+    
+    .rental-form h2 {
+        text-align: center;
+        margin-bottom: 50px; /* Increased margin for spacing */
+    }
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #008080;
+        padding: 30px 20px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+    } 
+    .car-gallery {
+        grid-template-columns: repeat(4, 1fr); /* 4 images per row */
+    }
+    .car-gallery img {
+        height: 500px; /* Set a larger height for bigger images */
+    }
+    .discount-item {
+        background-color: #008080;
+        border-radius: 10px;
+        padding: 50px;
+        flex: 0 0 auto; /* Prevent items from shrinking */
+        width: 800px; /* Set a fixed width for each item */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s;
+    }
+    .country-code {
+        background-color: #0f6d6af5; /* Light background for country code */
+        padding: 30px; /* Padding around the country code */
+        border: 1px solid #ccc; /* Border around the country code */
+        border-right: none; /* Remove right border */
+        border-radius: 10px 0 0 5px; /* Rounded corners for the left side */
+        width: 40px; /* Fixed width for the country code */
+        text-align: center; /* Center the country code text */
+        flex-shrink: 0; /* Prevent country code from shrinking */
+        color:white;
+    }
+    .mobile-input {
+        width: 100%; /* Make the container full width */
+        max-width: 1008px; /* Optional: limit max width */
+    }
+}
