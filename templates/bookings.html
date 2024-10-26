@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookings Page</title>
+    <link rel="stylesheet" href="../static/css/bookings.css"> <!-- Link your CSS file -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js" defer></script>
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="../index.html">Logo</a>
+        </div>
+        <div class="menu-option">
+            <span>☰</span>
+            <span class="menu-name">Menu</span> <!-- Added span for menu name -->
+            <ul class="menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="bookings.html">Reservations</a>
+                    <ul class="submenu">
+                        <li><a href="bookings.html">Book</a></li>
+                        <li><a href="#checkin">Check-in</a></li>
+                        <li><a href="#view-modify-cancel">View/Modify/Cancel Reservation</a></li>
+                        <li><a href="#requirements">Requirements</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#locations">Locations</a>
+                    <ul class="submenu">
+                        <li><a href="#chennai">Chennai</a></li>
+                        <li><a href="#bangalore">Bangalore</a></li>
+                        <li><a href="#erode">Erode</a></li>
+                        <li><a href="#coimbatore">Coimbatore</a></li>
+                        <li><a href="#hyderabad">Hyderabad</a></li>
+                        <li><a href="#vijayawada">Vijayawada</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#vehicles">Vehicles</a>
+                    <ul class="submenu">
+                        <li><a href="#bikes">Bikes</a></li>
+                        <li><a href="#cars">Cars</a></li>
+                        <li><a href="#bus">Bus</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-center">
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li>
+                    <a href="#reservations">Reservations</a>
+                    <ul class="submenu">
+                        <li><a href="#book">Book</a></li>
+                        <li><a href="#checkin">Check-in</a></li>
+                        <li><a href="#view-modify-cancel">View/Modify/Cancel Reservation</a></li>
+                        <li><a href="#requirements">Requirements</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#locations">Locations</a>
+                    <ul class="submenu">
+                        <li><a href="#chennai">Chennai</a></li>
+                        <li><a href="#bangalore">Bangalore</a></li>
+                        <li><a href="#erode">Erode</a></li>
+                        <li><a href="#coimbatore">Coimbatore</a></li>
+                        <li><a href="#hyderabad">Hyderabad</a></li>
+                        <li><a href="#vijayawada">Vijayawada</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#vehicles">Vehicles</a>
+                    <ul class="submenu">
+                        <li><a href="#bikes">Bikes</a></li>
+                        <li><a href="#cars">Cars</a></li>
+                        <li><a href="#bus">Bus</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="auth-button">
+            <a href="#login-signup" class="btn">Login / Sign Up</a>
+        </div>
+        <div class="language-option">
+            <span class="language-icon">🌐</span>
+            <a href="#language" class="language-text">Language</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 style ="color: white; text-align: center; margin-top: 30px;">Booking Details</h1>
+        <div class="grid-container">
+            <div class="grid-item left-box">
+                <h2 style="color: black;">Journey Details</h2>
+                <div class="journey">
+                    <div class="journey-info">
+                        <div class="location">
+                            <h3>Pick-up Location</h3>
+                            <p id="pickup-location-span"></p>
+                        </div>
+                        <div class="arrow">→</div>
+                        <div class="time">
+                            <h3>Drop-off Location</h3>
+                            <p id="dropoff-location-span"></p>
+                        </div>
+                    </div>
+                </div>
+                <p>Pick-up Date: <span id ="pickup-date-span"></span></p>
+                <p>Pick-up Time: <span id ="pickup-time-span"></span></p>
+                <p><span id="distance-span"></span></p>
+                <p><span id="time-span"></span></p>
+                <p>Car: <span id="car-span"></span></p>
+                <p><span id ="price-span"></span></p>
+            </div>
+            <div class="grid-item right-box">
+                <h2 style="color: black;">Customer Information</h2>
+                <div class="form-group">
+                    <div class="grid-item">
+                        <label for="customer-name">First Name:</label>
+                        <input type="text" id="customer-name">
+                    </div>
+                    <div class="grid-item">
+                        <label for="customer-name">Middle Name:</label>
+                        <input type="text" id="customer-middlename">
+                    </div>
+                    <div class="grid-item">
+                        <label for="customer-name">Last Name:</label>
+                        <input type="text" id="customer-lastname">
+                    </div>
+                    <div class="grid-item">
+                        <label for="customer-number">Contact Number:</label>
+                        <input type="tel" id="customer-number">
+                        <div id="mobilenumber-error" class="error-message" style="display: none;"></div>
+                    </div>
+                    <div class="grid-item">
+                        <label for="customer-email">Email:</label>
+                        <input type="email" id="customer-email">
+                    </div>
+                    <div class="grid-item">
+                        <label for="customer-age">Age:</label>
+                        <input type="number" id="customer-age">
+                    </div>
+                </div>
+                <div class ="grid-item" style="max-width: 1000px;">
+                    <label for="customer-address">Address:</label>
+                    <textarea type="text" id="customer-address" class="wide-input"></textarea>
+                </div>
+                <div class ="form-group" style ="margin: 20px; justify-content: center;">
+                <button a href="#payments" id="pay-button" class="btn" disabled>Pay Now</a></button>
+                </div>
+            </div>
+        </div>
+        <a href="../index.html" id="back_button" class="btn-home">Back</a>
+    </div>
+    <script src="../static/js/bookings.js"></script>
+</body>
+</html>
