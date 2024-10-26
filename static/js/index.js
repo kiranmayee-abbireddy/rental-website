@@ -237,5 +237,5 @@ document.querySelector("#book-now-btn").addEventListener("click", function(event
     });
 
     // Redirect to bookings.html with encoded query parameters
-    window.location.href = `../templates/bookings.html?${params.toString()}`;
+    window.location.href = `../../templates/bookings.html?${params.toString()}`;
 });
